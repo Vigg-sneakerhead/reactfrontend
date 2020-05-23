@@ -4,19 +4,35 @@ import sneakericon from './sneakericon.png';
 import viggicon from './vigg.png';
 import styled from 'styled-components';
 import {ButtonContainer} from './button';
-import "./index.css";
+import "./components.css";
 
 export default class Navbar extends Component {
     render() {
         return (
-            <nav className="navbar navbar-expand-sm bg-dark navbar-blue px-sm-5">
-                <Link to='/'>
-                    <img src= {viggicon} alt = "viggicon" className="navbar-brand"/>;
-                </Link>
-            <ul className ="navbar-nav aligh-items-center">
-                <li className ="nav-item ml-auto">
-                    <Link to ="/" className="nav-link">
-                    Products
+            <nav className="navbar navbar-custom" role ="navigation">
+                <ul className ="navbar navbar-homeiconcontainer">
+                    <Link to='/'>
+                        <img src= {viggicon} alt = "viggicon" className="navbar-homeicon"/>
+                    </Link>
+                </ul>
+            <ul className ="navbar navbar-sneakerscontainer">
+                <li className ="navbar navbar-sneakers ">
+                    <Link to ="/" className="text-light" >
+                    Sneakers
+                    </Link>
+                </li>
+            </ul>
+            <ul className ="navbar navbar-blogtitlecontainer">
+                <li className ="navbar navbar-blog">
+                    <Link to ="/blog" className="text-light" >
+                    Blog
+                    </Link>
+                </li>
+            </ul>
+            <ul className ="navbar navbar-selltitlecontainer">
+                <li className ="navbar navbar-sell">
+                    <Link to ="/blog" className="text-light" >
+                    Bán Giày
                     </Link>
                 </li>
             </ul>
@@ -28,7 +44,7 @@ export default class Navbar extends Component {
             </Link>
     
             </nav>
-        );
+        )
     }
 }
 
