@@ -9,12 +9,13 @@ import "./components.css";
 export default class Navbar extends Component {
     render() {
         return (
-            <nav className="navbar navbar-custom" role ="navigation">
-                <ul className ="navbar navbar-homeiconcontainer">
+            <nav className="navbar navbar-expand-sm" role ="navigation">
+                <ul className ="navbar navbar-brand">
                     <Link to='/'>
                         <img src= {viggicon} alt = "viggicon" className="navbar-homeicon"/>
                     </Link>
                 </ul>
+            
             <ul className ="navbar navbar-sneakerscontainer">
                 <li className ="navbar navbar-sneakers ">
                     <Link to ="/" className="text-light" >

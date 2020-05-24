@@ -4,9 +4,12 @@ import "./index.css";
 import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './App';
-
+import {ProductProvider} from "./context";
 
 ReactDOM.render(
-<Router>
-  <App/>
-</Router>, document.getElementById('root'));
+<ProductProvider>
+  <Router>
+    <App/>
+  </Router>
+</ProductProvider>, document.getElementById('root'));
+
