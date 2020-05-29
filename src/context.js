@@ -26,8 +26,8 @@ export default class ProductProvider extends Component {
     }
    
 
-    addToCart = () => {
-        console.log('hello from addtocart')
+    addToCart = (id) => {
+        console.log({id});
     }
     render() {
         return (
