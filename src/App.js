@@ -4,10 +4,11 @@ import "./index.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './components/Navbar';
 import Default from './components/Default';
-import Cart from './components/Cart';
+import Cart from './components/Cart/Cart';
 import Details from './components/Details';
 import ProductList from './components/ProductList';
 import Modal from './components/Modal'
+
 
 
 export default class App extends Component {
