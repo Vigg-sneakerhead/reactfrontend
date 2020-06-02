@@ -12,9 +12,13 @@ export default class FrontPage extends Component {
                                     </div>
                                     
                                 </div>
-                                <div className ="row">
-                                    <div id = "title" className ="front-page-title mx-auto">
+                                <div className ="row row-title mx-auto">
+                                    <div id = "title" className ="front-page-title mx-auto ">
                                         <h2>CHỌN ĐÔI SNEAKERS BẠN MƠ ƯỚC</h2>
+                                    </div>
+                                </div>
+                                <div className ="row row-title mx-auto">
+                                    <div id = "searchbar" className =" mx-auto ">
                                     </div>
                                 </div>
                             </div>
