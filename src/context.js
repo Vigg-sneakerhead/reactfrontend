@@ -9,9 +9,7 @@ export default class ProductProvider extends Component {
         detailProduct:detailProduct,
         cart: [],
         modalOpen:false,
-        modalProduct:detailProduct,
-        cartSubtotal: 0,
-        cartTax:0, 
+        modalProduct:detailProduct, 
         cartTotal:0
     }
     openModal = id => {
@@ -65,21 +63,64 @@ export default class ProductProvider extends Component {
             return {products:tempProducts, cart: [...this.state.cart, product]};
         },
         ()=> {
-            console.log(this.state);
+            this.addTotals();
         })
 
     }
     increment = id => {
-
+        const product = this.getItem(id);
+        product.count += 1;
+        product.total = product.price*product.count;
+        this.setState(()=>{
+            return {detailProduct:product}
+        },
+       ()=>{
+           this.addTotals()
+        })
     }
     decrement = id => {
-
+        const product = this.getItem(id);
+        product.count -= 1;
+        product.total = product.price*product.count;
+        this.setState(()=>{
+            return {detailProduct:product} 
+        },
+        ()=>{
+           this.addTotals()
+        })
     }
     removeItem = id => {
-
+        const product = this.getItem(id);
+        product.inCart = false;
+        product.count =0; 
+        const NewCart = this.state.cart.filter(item => item.id !== id)
+        this.setState(()=>{
+            return {detailProduct:product, cart:NewCart} 
+        },
+        () => {
+            this.addTotals();
+        }
+        )
     }
     clearCart = () => {
+        this.setState(
+            ()=> {
+            return {cart:[]};
+            },
+            ()=> {
+                this.setProducts();
+                this.addTotals();
+        });
+    };
 
+    addTotals = () => {
+        let total = 0;
+        this.state.cart.map(item => {total += item.total});
+        this.setState(()=> {
+            return {
+                cartTotal:total
+            }
+        })
     }
     
 
