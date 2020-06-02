@@ -1,0 +1,45 @@
+:root {
+    --mainBlue: #2a2a72;
+    --lightBlue: #009ffd;
+    --mainWhite: #f3f3f3;
+    --mainDark: #232528;
+    --mainYellow: #ffa400;
+    --mainBlack: #000000;
+}
+
+.text-title {
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.3rem;
+    text-transform: capitalize;
+}
+
+.navbar-expand-sm {
+    background-color: black;
+    font-family: 'Roboto', sans-serif !important;
+}
+.navbar-homeicon {
+    width: 70%;
+    height: 70%;
+}
+
+.navbar-sneakerscontainer { 
+    font-size: 20px;
+
+}
+.navbar-blogtitlecontainer {
+
+    font-size: 20px;
+
+}
+.navbar-selltitlecontainer {
+
+    font-size: 20px;
+}
+
+
+.text-blue{
+    color: var(--mainBlue);
+}
+.text-bright{
+    color:var(--lightBlue);
+}
