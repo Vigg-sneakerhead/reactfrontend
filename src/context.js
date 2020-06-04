@@ -8,6 +8,7 @@ export default class ProductProvider extends Component {
         products: [], 
         detailProduct:detailProduct,
         cart: [],
+        bestsellers:[],
         modalOpen:false,
         modalProduct:detailProduct, 
         cartTotal:0
@@ -28,12 +29,18 @@ export default class ProductProvider extends Component {
     }
     setProducts = () => {
         let products = [];
+        let bestsellers = [];
         storeProducts.forEach(item => {
             const singleItem = {...item};
+            if (item.New == true) {
+                const newItem = {...item};
+                bestsellers = [...bestsellers, newItem];
+            } 
+           
             products = [...products, singleItem];
         });
         this.setState(() => {
-            return {products};
+            return {products, bestsellers};
         });
     };
     

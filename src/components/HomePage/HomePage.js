@@ -8,7 +8,7 @@ export default class HomePage extends Component {
         return (
             
             <div className ="home-page">
-                    <img class ="background" src = {background}/>
+                    <img className ="background" src = {background}/>
                     <FrontPage/>
             </div>
            

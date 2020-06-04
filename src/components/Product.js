@@ -61,7 +61,8 @@ Product.propTypes = {
         img:PropTypes.string,
         title:PropTypes.string,
         pricee:PropTypes.number,
-        inCart:PropTypes.bool
+        inCart:PropTypes.bool,
+        New:PropTypes.bool
 
     }).isRequired
 }
