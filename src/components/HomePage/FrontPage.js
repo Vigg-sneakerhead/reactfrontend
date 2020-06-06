@@ -47,6 +47,15 @@ export default class FrontPage extends Component {
                                         <h2>DEAL GIÀY TRÊN VIGG</h2>
                                     </div>
                                 </div>
+                                <div class="row">
+                                            <ProductConsumer>
+                                                {value => {
+                                                    return value.secondHand.map(product => {
+                                                        return <Product key={product.id} product ={product}/>;
+                                                    })
+                                                }}
+                                            </ProductConsumer>
+                                </div>
                             </div>
             </FrontPageContainer>
         )
