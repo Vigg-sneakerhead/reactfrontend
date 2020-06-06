@@ -10,7 +10,7 @@ export default class Navbar extends Component {
     render() {
         return (
             <nav className="navbar navbar-nav navbar-expand-sm navbar-xs fixed-top" role ="navigation">
-             <div className ="container-fluid ">
+             <div className ="container-fluid justify-content-center ">
                 <ul className ="navbar-nav">
                     <Link to='/'>
                         <img src= {viggicon} alt = "viggicon" className="navbar-homeicon"/>
@@ -19,7 +19,7 @@ export default class Navbar extends Component {
                 </ul>
                
                 <ul className ="navbar navbar-sneakerscontainer">
-                    <li className ="navbar navbar-sneakers ">
+                    <li className ="navbar navbar-sneakers  ">
                         <Link to ="/Productlist" className="text-light font-weight-bold justify-content-center" >
                             MUA GIÀY
                         </Link>
@@ -33,7 +33,7 @@ export default class Navbar extends Component {
                         </Link>
                     </li>
                 </ul>
-                <ul className ="navbar navbar-blogtitlecontainer">
+                <ul className ="navbar navbar-blogtitlecontainer mr-5">
                     <li className ="navbar navbar-blog">
                         <Link to ="/gallery" className="text-light font-weight-bold justify-content-center" >
                         PHONG CÁCH

@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 
 export default class Product extends Component {
     render() {
-        const {id, title,img,price,inCart} = this.props.product;
+        const {id, title,img,price,inCart,New} = this.props.product;
         return (
             <ProductWrapper className ="col-9 mx-auto col-md-6 col-lg-3 my-3">
                 <div className="card">
@@ -34,6 +34,24 @@ export default class Product extends Component {
                             
                             <i className="fas fa-cart-plus"/>)}
                         </button>
+                        <div 
+                        disabled = {New?true:false} 
+                        >
+                            {New?(
+                               <div  className = "container labelnew mx-auto justify-content-center " disabled>
+                                <p className="text-capitalize mx-auto text-center align-middle" >
+                                New
+                                </p>
+                               </div>
+                            ):(
+                                <div  className = "container labelold mx-auto justify-content-center " disabled>
+                                <p className="text-capitalize mx-auto text-center align-middle" >
+                                Second-hand
+                                </p>
+                               </div>
+                            
+                             )}
+                        </div>
                      </div>)}
                    
                   </ProductConsumer>
@@ -93,7 +111,7 @@ const ProductWrapper = styled.div`
     transition: all 1s linear;
 }
 .img-container:hover .card-img-top {
-    transform:scale(1.2);
+    transform:scale(1.1);
 }
 .cart-btn {
     position:absolute;
@@ -111,8 +129,41 @@ const ProductWrapper = styled.div`
 .img-container: hover .cart-btn{
     transform:translate(0,0);
 }
+
 .cart-btn:hover {
     color:var (--mainBlue);
     cursor: pointer;
+}
+.labelnew {
+    position:absolute;
+    top: 0;
+    left: 0;
+    background:var(--mainYellow);
+    border:none;
+    color: var(--mainWhite);
+    font-size:1.3rem;
+    border-radius:0 0 0 0;
+    transition: all 0.5s linear;
+
+}
+.labelnew:hover {
+    color:var(--mainDark);
+    cursor:pointer
+}
+.labelold {
+    position:absolute;
+    top: 0;
+    left: 0;
+    background:var(--mainRed);
+    border:none;
+    color: var(--mainWhite);
+    font-size:1.3rem;
+    border-radius:0 0 0 0;
+    transition: all 0.5s linear;
+
+}
+.labelold:hover {
+    color:var(--mainDark);
+    cursor:pointer
 }
 `;
