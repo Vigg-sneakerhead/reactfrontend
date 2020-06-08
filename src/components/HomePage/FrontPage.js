@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import frontpageicon from './frontpageicon.png';
 import {ProductConsumer} from "../../context";
+import ProductCarousel from "../ProductCarousel";
 import Product from "../Product";
 import 'owl.carousel/dist/assets/owl.carousel.min.css';
 import 'owl.carousel/dist/assets/owl.theme.default.min.css';
@@ -36,35 +37,42 @@ export default class FrontPage extends Component {
                                     </div>
                                 </div>
                                 <div class="row">
+                                    <div id="new-releases" className="owl-carousel" nav='true'>
                                             <ProductConsumer>
                                                 {value => {
-                                                    return (
-                                                         <div id="new-releases" className="owl-carousel" nav='true'>
-                                                            {value.bestsellers.map(product => {
+                                                    return ( value.bestsellers.map(product => {
                                                                 return (
                                                            
-                                                                    <Product key={product.id} product ={product}/>
+                                                                    <ProductCarousel key={product.id} product ={product}/>
                                                                 );
-                                                        })} 
-                                                            </div>
+                                                        })             
                                                     )
                                                 }}
                                             </ProductConsumer>
+                                    </div>
                                 </div>
                                 <div className ="row row-title mx-auto my-5 text-light">
                                     <div id = "title" className ="best-seller-title mr-auto ">
                                         <h2>DEAL GIÀY TRÊN VIGG</h2>
                                     </div>
                                 </div>
+                                
                                 <div class="row">
+                                    <div id="second-hand" className="owl-carousel" nav='true'>
                                             <ProductConsumer>
                                                 {value => {
-                                                    return value.secondHand.map(product => {
-                                                        return <Product key={product.id} product ={product}/>;
-                                                    })
+                                                    return (value.secondHand.map(product => {
+                                                                return (
+                                                           
+                                                                    <ProductCarousel key={product.id} product ={product}/>
+                                                                );
+                                                        })             
+                                                    )
                                                 }}
                                             </ProductConsumer>
+                                    </div>
                                 </div>
+                            
                             </div>
             </FrontPageContainer>
         )

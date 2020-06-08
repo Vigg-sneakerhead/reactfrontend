@@ -24,7 +24,7 @@
     background-color: transparent;
 }
 .owl-dot {
-    display: none;
+    display: true;
 }
 
 .owl-carousel .owl-nav button.owl-prev:hover, 

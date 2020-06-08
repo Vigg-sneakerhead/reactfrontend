@@ -3,6 +3,7 @@ $(document).ready(function() {
       nav: true,
       autoplay: true,
       responsiveClass:true,
+      dots:true,
       responsive:{
         0:{
           items:1,
@@ -16,19 +17,19 @@ $(document).ready(function() {
       }
     })
 
-    $('#our-partners').owlCarousel({
+    $('#second-hand').owlCarousel({
       nav: true,
       autoplay: true,
       responsiveClass:true,
       responsive:{
         0:{
+          items:1,
+        },
+        767:{
           items:2,
         },
-        992:{
-          items:3,
-        },
         1200:{
-          items:4,
+          items:3,
         }
       }
     })
