@@ -12,9 +12,9 @@ export default class Navbar extends Component {
             <nav className="navbar navbar-nav navbar-expand-sm navbar-xs fixed-top" role ="navigation">
              <div className ="container-fluid justify-content-center ">
                 <ul className ="navbar-nav">
-                    <Link to='/'>
+                    <a href='/'>
                         <img src= {viggicon} alt = "viggicon" className="navbar-homeicon"/>
-                    </Link>
+                    </a>
                 
                 </ul>
                

@@ -20,6 +20,7 @@
 .navbar-homeicon {
     width: 70%;
     height: 70%;
+    object-fit: cover;
 }
 
 .navbar-sneakerscontainer { 

@@ -3,7 +3,8 @@ import styled from 'styled-components';
 import frontpageicon from './frontpageicon.png';
 import {ProductConsumer} from "../../context";
 import ProductCarousel from "../ProductCarousel";
-import Product from "../Product";
+import Footer from "./Footer/Footer";
+
 import 'owl.carousel/dist/assets/owl.carousel.min.css';
 import 'owl.carousel/dist/assets/owl.theme.default.min.css';
 export default class FrontPage extends Component {
@@ -72,9 +73,11 @@ export default class FrontPage extends Component {
                                             </ProductConsumer>
                                     </div>
                                 </div>
-                            
+                                <Footer/>              
                             </div>
+                            
             </FrontPageContainer>
+           
         )
     }
 }
