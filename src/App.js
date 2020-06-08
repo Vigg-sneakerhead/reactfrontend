@@ -5,6 +5,7 @@ import "./components/HomePage/HomePage.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import"./components/components.css";
 import"./components/HomePage/OwlCarousel.css";
+import './components/HomePage/Footer/Footer.css';
 import Navbar from './components/Navbar';
 import Default from './components/Default';
 import Cart from './components/Cart/Cart';

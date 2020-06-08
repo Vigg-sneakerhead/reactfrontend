@@ -3,13 +3,14 @@ import styled from 'styled-components';
 import frontpageicon from './frontpageicon.png';
 import {ProductConsumer} from "../../context";
 import ProductCarousel from "../ProductCarousel";
-import Footer from "./Footer/Footer";
+import {FooterContainer} from "./Footer/Footer";
 
 import 'owl.carousel/dist/assets/owl.carousel.min.css';
 import 'owl.carousel/dist/assets/owl.theme.default.min.css';
 export default class FrontPage extends Component {
     render() {
         return (
+          <React.Fragment>
             <FrontPageContainer>
                             <div  className='container'>
                                 <div className ="row">
@@ -72,12 +73,14 @@ export default class FrontPage extends Component {
                                                 }}
                                             </ProductConsumer>
                                     </div>
-                                </div>
-                                <Footer/>              
+                                </div>         
                             </div>
+                            
                             
             </FrontPageContainer>
            
+            
+          </React.Fragment>
         )
     }
 }
@@ -85,8 +88,7 @@ const FrontPageContainer = styled.div`
 position:relative; 
 top:0;
 left:0;
-right:0;
-bottom:0;
+
 background:rgba(0,0,0,0.3);
 display:flex;
 

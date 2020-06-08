@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import background from '../../background.jpg';
 import FrontPage from './FrontPage';
+import Footer from './Footer/Footer';
 
 
 
@@ -11,7 +12,7 @@ export default class HomePage extends Component {
             <div className ="home-page">
                     <img className ="background" src = {background}/>
                     <FrontPage/>
-                    
+                    <Footer/>
             </div>
            
             
