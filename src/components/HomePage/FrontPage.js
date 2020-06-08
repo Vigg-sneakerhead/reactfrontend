@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import frontpageicon from './frontpageicon.png';
 import {ProductConsumer} from "../../context";
 import Product from "../Product";
+import 'owl.carousel/dist/assets/owl.carousel.min.css';
+import 'owl.carousel/dist/assets/owl.theme.default.min.css';
 export default class FrontPage extends Component {
     render() {
         return (
@@ -36,9 +38,16 @@ export default class FrontPage extends Component {
                                 <div class="row">
                                             <ProductConsumer>
                                                 {value => {
-                                                    return value.bestsellers.map(product => {
-                                                        return <Product key={product.id} product ={product}/>;
-                                                    })
+                                                    return (
+                                                         <div id="new-releases" className="owl-carousel" nav='true'>
+                                                            {value.bestsellers.map(product => {
+                                                                return (
+                                                           
+                                                                    <Product key={product.id} product ={product}/>
+                                                                );
+                                                        })} 
+                                                            </div>
+                                                    )
                                                 }}
                                             </ProductConsumer>
                                 </div>
