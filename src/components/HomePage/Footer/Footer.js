@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import './Footer.css';
-import viggicon from '../../vigg.png';
 import fb from './footerimg/fb-icon.png';
 import insta from './footerimg/insta-icon.png';
 import lkn from './footerimg/linkedin-icon.png';
@@ -24,13 +23,13 @@ export default class Footer extends Component {
                             <div className ="container">
                                 <div className = "row">
                                     <div className = 'col logo'>
-                                        <img src = {fb} className = "logo"/>
+                                        <a href = "https://facebook.com"><img  src = {fb} className = "logo"/></a>
                                     </div>
                                     <div className = 'col logo'>
-                                        <img src = {insta} className = "logo"/>
+                                        <a href = "https://instagram.com"><img src =  {insta} className = "logo"/></a>
                                     </div>
                                     <div className = 'col logo'>
-                                        <img src = {lkn} className = "logo"/>
+                                    <a href = "https://linkedin.com"><img  src = {lkn} className = "logo"/></a>
                                     </div>
                                 </div>  
                             </div>
