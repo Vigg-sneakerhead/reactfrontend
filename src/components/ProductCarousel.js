@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import {Link} from 'react-router-dom';
 import {ProductConsumer} from "../context";
 import PropTypes from "prop-types";
-import {ProductWrapper} from './Product';
+import {ProductWrapper} from './ProductPage/Product';
 
 export default class ProductCarousel extends Component {
     render() {

@@ -10,7 +10,7 @@ import Navbar from './components/Navbar';
 import Default from './components/Default';
 import Cart from './components/Cart/Cart';
 import Details from './components/Details';
-import ProductList from './components/ProductList';
+import ProductList from './components/ProductPage/ProductList';
 import Modal from './components/Modal';
 import HomePage from './components/HomePage/HomePage'
 
