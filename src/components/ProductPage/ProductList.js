@@ -3,6 +3,7 @@ import Product from "./Product";
 import Title from "../Title";
 import {ProductConsumer} from "../../context";
 import FilterBar from "./FilterBar";
+import './ProductPage.css';
 
 export default class ProductList extends Component {
 

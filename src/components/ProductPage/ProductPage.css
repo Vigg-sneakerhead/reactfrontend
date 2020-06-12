@@ -1,0 +1,16 @@
+.brand-toggle {
+    background-color: transparent;
+    border: none;
+    transition: all 0.5s linear;
+    cursor: pointer;
+    font-weight:bold;
+}
+
+.toggle {
+    margin-left: 10rem;
+    font-size: larger;
+}
+
+.brandlist {
+    display: none;
+}
