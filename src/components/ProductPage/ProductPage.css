@@ -1,4 +1,4 @@
-.brand-toggle {
+.component-toggle {
     background-color: transparent;
     border: none;
     transition: all 0.5s linear;
@@ -7,10 +7,18 @@
 }
 
 .toggle {
-    margin-left: 10rem;
+    position: absolute;
+    right:5px;
     font-size: larger;
 }
 
 .brandlist {
     display: none;
+}
+.brand {
+    cursor: pointer;
+    color:#303030;
+}
+.brand:hover {
+    color:#A0A0A0;
 }
