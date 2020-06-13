@@ -4,6 +4,8 @@ import Title from "../Title";
 import {ProductConsumer} from "../../context";
 import FilterBar from "./FilterBar";
 import './ProductPage.css';
+import SortByBar from './SortByBar';
+import Footer from '../HomePage/Footer/Footer';
 
 export default class ProductList extends Component {
 
@@ -22,7 +24,7 @@ export default class ProductList extends Component {
                                 <div className = "container">
                                     <div className="row">
                                         <div className = "col-lg-3 col-md-3 col-xs-3 ml-auto text-center">
-                                           SORT BY
+                                           <SortByBar/>
                                         </div>
                                     </div>
                                     <div className ="row">
@@ -40,6 +42,7 @@ export default class ProductList extends Component {
                     </div>
                     
                 </div>
+                <Footer/>
             </React.Fragment>
                 
         );

@@ -12,7 +12,7 @@
     font-size: larger;
 }
 
-.brandlist {
+.toggle-title {
     display: none;
 }
 .brand {
@@ -21,4 +21,7 @@
 }
 .brand:hover {
     color:#A0A0A0;
+}
+.price-range {
+    margin-top: 2rem;
 }
