@@ -8,8 +8,8 @@ export default class PriceBar extends Component {
         super(props);
     
         this.state = { value5: {
-            min: 10.000,
-            max: 20.000,
+            min: 0.000,
+            max: 30.000,
           },
         };
       }

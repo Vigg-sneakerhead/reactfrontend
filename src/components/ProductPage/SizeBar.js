@@ -9,8 +9,8 @@ export default class SizeBar extends Component {
         super(props);
     
         this.state = { value5: {
-            min: 6,
-            max: 10,
+            min: 4,
+            max: 12.5,
           },
         };
       }
