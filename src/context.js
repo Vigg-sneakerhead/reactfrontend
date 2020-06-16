@@ -12,7 +12,15 @@ export default class ProductProvider extends Component {
         secondHand: [],
         modalOpen:false,
         modalProduct:detailProduct, 
-        cartTotal:0
+        cartTotal:0,
+        Brand: 'none',
+        minPrice: 0,
+        maxPrice: 30,
+        minSize: 4,
+        maxSize: 12,
+        New:'none', 
+
+
     }
     openModal = id => {
         const product = this.getItem(id);
@@ -33,7 +41,6 @@ export default class ProductProvider extends Component {
         let bestsellers = [];
         let secondHand =[];
         storeProducts.forEach(item => {
-            const singleItem = {...item};
             if (item.New === true) {
                 const newItem = {...item};
                 bestsellers = [...bestsellers, newItem];
@@ -42,9 +49,8 @@ export default class ProductProvider extends Component {
                     const oldItem = {...item};
                     secondHand = [...secondHand, oldItem];
             }
-            
            
-            products = [...products, singleItem];
+            products = [...bestsellers, ...secondHand];
         });
         this.setState(() => {
             return {products, bestsellers,secondHand};
@@ -137,7 +143,47 @@ export default class ProductProvider extends Component {
             }
         })
     }
-    
+    FilterCondition = condition => {
+        let products = [];
+        if (condition == false) {
+            products =  [...this.state.bestsellers];
+        }
+        else {
+            products =  [...this.state.secondHand];
+        } 
+        this.setState(()=>{
+            return {products} 
+        },)
+        
+    }
+    FilterSize = (min,max) => {
+        this.setState(
+            ()=> {
+            return {
+                minSize:min,
+                maxSize:max,
+            };
+        });
+    }
+    FilterPrice = (min,max) => {
+        this.setState(
+            ()=> {
+            return {
+                minPrice:min,
+                maxPrice:max,
+            };
+        });
+    }
+    FilterBrand = (brand) => {
+        this.setState(
+            ()=> {
+                return {
+                    Brand:brand,
+                };
+            }
+        )
+    }
+
 
     render() {
         return (
@@ -151,6 +197,9 @@ export default class ProductProvider extends Component {
                 decrement:this.decrement,
                 removeItem:this.removeItem,
                 clearCart:this.clearCart,
+                FilterCondition:this.FilterCondition,
+                FilterSize:this.FilterSize,
+                FilterPrice:this.FilterPrice,
 
             }}>
                 {this.props.children}

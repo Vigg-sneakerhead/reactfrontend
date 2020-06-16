@@ -5,11 +5,15 @@ import SizeBar from './SizeBar';
 import ConditionBar from './ConditionBar';
 import BrandBar from './BrandBar';
 
+
+
+
 export default class FilterBar extends Component {  
     
     render() { 
         return (
-            <div className ="ml-4">
+       
+             <div className ="ml-4">
                 <h5>Filter by</h5>
                 <hr/>
                 <BrandBar/>
@@ -21,6 +25,8 @@ export default class FilterBar extends Component {
                 <ConditionBar/>
                 
             </div>
+  
+            
             
         )
     }

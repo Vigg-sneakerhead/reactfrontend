@@ -15,7 +15,8 @@ export const storeProducts = [
     inCart: false,
     count: 0,
     total: 0,
-    New: true
+    New: true,
+    Brand: 'yeezy',
   },
   {
     id: 2,
@@ -28,7 +29,8 @@ export const storeProducts = [
     inCart: false,
     count: 0,
     total: 0,
-    New: true
+    New: true,
+    Brand: 'yeezy'
   },
   {
     id: 3,
@@ -41,7 +43,8 @@ export const storeProducts = [
     inCart: false,
     count: 0,
     total: 0,
-    New: false
+    New: false,
+    Brand: 'adidas'
   },
   {
     id: 4,
@@ -54,7 +57,8 @@ export const storeProducts = [
     inCart: false,
     count: 0,
     total: 0,
-    New: true
+    New: true,
+    Brand: 'nike',
 
   },
   {
@@ -68,7 +72,9 @@ export const storeProducts = [
     inCart: false,
     count: 0,
     total: 0,
-    New: true
+    New: true,
+    Brand: 'yeezy',
+
   },
   {
     id: 6,
@@ -81,7 +87,8 @@ export const storeProducts = [
     inCart: false,
     count: 0,
     total: 0,
-    New: false
+    New: false,
+    Brand: 'converse'
   },
   {
     id: 7,
@@ -94,7 +101,9 @@ export const storeProducts = [
     inCart: false,
     count: 0,
     total: 0,
-    New: false
+    New: false,
+    Brand: 'puma',
+
   },
 
   {
@@ -109,6 +118,7 @@ export const storeProducts = [
     count: 0,
     total: 0,
     New: true,
+    Brand: 'Jordan',
   },
   {
     id: 9,
@@ -121,7 +131,8 @@ export const storeProducts = [
     inCart: false,
     count: 0,
     total: 0,
-    New: false
+    New: false,
+    Brand: 'yeezy',
   },
 ];
 
