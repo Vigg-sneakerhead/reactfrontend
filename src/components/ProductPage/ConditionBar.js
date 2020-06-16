@@ -24,8 +24,14 @@ export default function ConditionBar() {
               </div>
   
               <div id ="condition-range" className ="toggle-title mb-4">
-                      <div className ="font-weight-light brand condition-choice" onClick = {()=> {value.FilterCondition(false)}}> New </div>
-                      <div className ="font-weight-light brand condition-choice" onClick = {()=> {value.FilterCondition(true)}}> Used </div> 
+                      <div className ="font-weight-light brand condition-choice" onClick = {()=> {
+                          value.FilterCondition('new');
+                         
+                      }}> New </div>
+                      <div className ="font-weight-light brand condition-choice" onClick = {()=> {
+                          value.FilterCondition('old');
+                         
+                      }}> Used </div> 
               </div>
             </div>
 
