@@ -154,7 +154,12 @@ export default class ProductProvider extends Component {
         this.setState(()=>{
             return {Condition:condition} 
             
-        },);
+        },
+        ()=> {
+            
+            this.ProductFilter();
+            
+        });
         console.log(condition);
     }
     FilterSize = (min,max) => {
@@ -191,6 +196,35 @@ export default class ProductProvider extends Component {
         console.log(brand);
     }
 
+    ProductFilter = () => {
+      
+        const brand = this.state.Brand;
+        const minSize = this.state.minSize;
+        const maxSize = this.state.maxSize;
+        const minPrice = this.state.minPrice;
+        const maxPrice = this.state.maxPrice;
+        const condition = this.state.Condition;
+        let newProducts = [];
+        const products = this.state.products;
+        if (condition == 'none') {
+            this.setState(()=> {
+                this.setProducts();
+            });
+        }
+        else if (condition == 'new') {
+            newProducts = [...this.state.bestsellers];
+            this.setState(()=> {
+                return {products:newProducts}
+            });
+        } 
+        else if (condition =='old') {
+            newProducts = [...this.state.secondHand];
+            this.setState(()=> {
+                return {products:newProducts}
+            });
+        }
+       
+    }
     render() {
         return (
             <ProductContext.Provider value ={{
