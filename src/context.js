@@ -10,6 +10,7 @@ export default class ProductProvider extends Component {
         cart: [],
         bestsellers:[], 
         secondHand: [],
+        fixedProducts: [],
         modalOpen:false,
         modalProduct:detailProduct, 
         cartTotal:0,
@@ -18,7 +19,7 @@ export default class ProductProvider extends Component {
         maxPrice: 30,
         minSize: 4,
         maxSize: 12,
-        Condition:'', 
+        Condition:'none', 
 
 
     }
@@ -35,6 +36,7 @@ export default class ProductProvider extends Component {
     }
     componentDidMount(){
         this.setProducts();
+        this.resetProducts();
     }
     setProducts = () => {
         let products = [];
@@ -54,6 +56,27 @@ export default class ProductProvider extends Component {
         });
         this.setState(() => {
             return {products, bestsellers,secondHand};
+           
+        });
+    };
+    resetProducts = () => {
+        let fixedProducts = [];
+        let bestsellers = [];
+        let secondHand =[];
+        storeProducts.forEach(item => {
+            if (item.New === true) {
+                const newItem = {...item};
+                bestsellers = [...bestsellers, newItem];
+            } 
+            else {
+                    const oldItem = {...item};
+                    secondHand = [...secondHand, oldItem];
+            }
+           
+            fixedProducts = [...bestsellers, ...secondHand];
+        });
+        this.setState(() => {
+            return {fixedProducts};
            
         });
     };
@@ -191,8 +214,13 @@ export default class ProductProvider extends Component {
             brand ='none';
         }
         this.setState(()=>{
-            return {Brand:brand} 
+            return {Brand:brand}; 
+        },
+        ()=> {
+            
+            this.ProductFilter();
         });
+        
         console.log(brand);
     }
 
@@ -206,24 +234,28 @@ export default class ProductProvider extends Component {
         const condition = this.state.Condition;
         let newProducts = [];
         const products = this.state.products;
+        const resetProducts = this.state.fixedProducts;
         if (condition == 'none') {
-            this.setState(()=> {
-                this.setProducts();
-            });
+            newProducts = resetProducts;
+            
         }
         else if (condition == 'new') {
             newProducts = [...this.state.bestsellers];
-            this.setState(()=> {
-                return {products:newProducts}
-            });
+          
         } 
         else if (condition =='old') {
             newProducts = [...this.state.secondHand];
-            this.setState(()=> {
-                return {products:newProducts}
-            });
+            
         }
-       
+        if (brand =='none') {
+            newProducts = newProducts.filter(item => item.Brand != brand)
+        }
+        else {
+            newProducts = newProducts.filter(item => item.Brand == brand)
+        }
+        this.setState(()=> {
+            return {products:newProducts}
+        });
     }
     render() {
         return (
