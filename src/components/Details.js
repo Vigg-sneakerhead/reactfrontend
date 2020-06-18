@@ -43,7 +43,9 @@ export default class Details extends Component {
                                     </p>  
                                     <div>
                                         <Link to='/Productlist'> 
-                                            <ButtonContainer>
+                                            <ButtonContainer onClick = {()=>{
+                                                value.resetState();
+                                            }}>
                                                 back to sneakers 
                                             </ButtonContainer>      
                                         </Link>

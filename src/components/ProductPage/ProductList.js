@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PureComponent} from 'react';
 import Product from "./Product";
 import Title from "../Title";
 import {ProductConsumer} from "../../context";

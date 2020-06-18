@@ -78,9 +78,10 @@ Product.propTypes = {
         id:PropTypes.number,
         img:PropTypes.string,
         title:PropTypes.string,
-        pricee:PropTypes.number,
+        price:PropTypes.number,
         inCart:PropTypes.bool,
-        New:PropTypes.bool
+        New:PropTypes.bool,
+        size:PropTypes.number,
 
     }).isRequired
 }
@@ -88,6 +89,7 @@ export const ProductWrapper = styled.div`
 .card {
     border-color:transparent;
     transition: all 1s linear;
+    border: 0.04rem solid rgba(0,0,0,0.2);
 }  
 .card-footer{
     background:transparent;
@@ -96,7 +98,7 @@ export const ProductWrapper = styled.div`
 }
 &:hover {
     .card {
-        border: 0.04rem solid rgba(0,0,0,0.2);
+        border: 0.04rem solid rgba(0,0,0,0.5);
         box-shadow:2px 2px 5px 0px rgba(0,0,0,0.2);   
         }
     .card-footer{

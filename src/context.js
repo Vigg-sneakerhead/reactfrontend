@@ -55,7 +55,7 @@ export default class ProductProvider extends Component {
             products = [...bestsellers, ...secondHand];
         });
         this.setState(() => {
-            return {products, bestsellers,secondHand};
+            return {products};
            
         });
     };
@@ -76,13 +76,28 @@ export default class ProductProvider extends Component {
             fixedProducts = [...bestsellers, ...secondHand];
         });
         this.setState(() => {
-            return {fixedProducts};
+            return {fixedProducts, bestsellers,secondHand};
            
         });
     };
+    resetState = () => {
+        const Brand =  'none';
+        const minPrice= 0;
+        const maxPrice= 30;
+        const minSize= 4;
+        const maxSize= 12;
+        const Condition ='none';
+        this.setState(() => {
+            return {Brand,minPrice,maxPrice,minSize,maxSize,Condition};
+
+        },
+        ()=> {
+            this.ProductFilter();
+        })
+    }
     
     getItem = id => {
-        const product = this.state.products.find(item => item.id === id);
+        const product = this.state.fixedProducts.find(item => item.id === id);
         return product; 
     }
 
@@ -95,7 +110,7 @@ export default class ProductProvider extends Component {
    
 
     addToCart = id => {
-        let tempProducts = [...this.state.products];
+        let tempProducts = [...this.state.fixedProducts];
         const index = tempProducts.indexOf(this.getItem(id));
         const product = tempProducts[index];
         product.inCart = true;
@@ -104,7 +119,7 @@ export default class ProductProvider extends Component {
         product.total = price; 
         this.setState(
             () => {
-            return {products:tempProducts, cart: [...this.state.cart, product]};
+            return {fixedProducts:tempProducts, cart: [...this.state.cart, product]};
         },
         ()=> {
             this.addTotals();
@@ -153,6 +168,7 @@ export default class ProductProvider extends Component {
             },
             ()=> {
                 this.setProducts();
+                this.resetState();
                 this.addTotals();
         });
     };
@@ -191,8 +207,11 @@ export default class ProductProvider extends Component {
             return {
                 minSize:min,
                 maxSize:max,
-            };
-        });
+            }}, 
+            ()=> {
+            
+                this.ProductFilter();
+            });
     }
     FilterPrice = (min,max) => {
         this.setState(
@@ -201,6 +220,10 @@ export default class ProductProvider extends Component {
                 minPrice:min,
                 maxPrice:max,
             };
+        },
+        ()=> {
+            
+            this.ProductFilter();
         });
     }
     
@@ -253,6 +276,8 @@ export default class ProductProvider extends Component {
         else {
             newProducts = newProducts.filter(item => item.Brand == brand)
         }
+        newProducts = newProducts.filter(item => item.price >= minPrice && item.price <= maxPrice)
+        newProducts = newProducts.filter(item => item.size >= minSize && item.size <= maxSize)
         this.setState(()=> {
             return {products:newProducts}
         });
@@ -274,6 +299,7 @@ export default class ProductProvider extends Component {
                 FilterPrice:this.FilterPrice,
                 FilterBrand:this.FilterBrand,
                 FilterBrand:this.FilterBrand,
+                resetState:this.resetState,
 
             }}>
                 {this.props.children}

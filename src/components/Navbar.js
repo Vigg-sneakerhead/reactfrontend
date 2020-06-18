@@ -5,6 +5,8 @@ import viggicon from './vigg.png';
 import styled from 'styled-components';
 import {ButtonContainer} from './button';
 import "./components.css";
+import {ProductConsumer} from '../context';
+
 
 export default class Navbar extends Component {
     render() {
@@ -20,9 +22,16 @@ export default class Navbar extends Component {
                
                 <ul className ="navbar navbar-sneakerscontainer">
                     <li className ="navbar navbar-sneakers  ">
-                        <Link to ="/Productlist" className="text-light font-weight-bold justify-content-center" >
-                            MUA GIÀY
-                        </Link>
+                        <ProductConsumer>
+                            {value => (
+                                <Link to ="/Productlist" className="text-light font-weight-bold justify-content-center" onClick = {() => {
+                                    value.resetState();
+                                }}>
+                                    MUA GIÀY
+                                </Link>
+                            )}
+                        </ProductConsumer>
+                        
                     </li>
                 </ul>
                 

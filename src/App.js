@@ -23,7 +23,7 @@ export default class App extends Component {
                 <Navbar />
                 <Switch>
                     <Route exact path = "/"component = {HomePage}/> 
-                    <Route exact path = "/Productlist"component = {ProductList}/> 
+                    <Route exact path = "/Productlist"exact component = {ProductList}/> 
                     <Route path = "/details"component = {Details}/> 
                     <Route path = "/cart"component = {Cart}/> 
                     <Route path = "/Gallery"component = {Default}/>
