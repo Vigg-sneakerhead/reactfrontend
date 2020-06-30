@@ -260,6 +260,15 @@ export default class ProductProvider extends Component {
         console.log(brand);
     }
 
+    Sortby = (method) => {
+        this.setState(()=> {
+            return {SortMethod: method}
+        },
+        ()=> {
+            this.ProductFilter();
+        });
+    }
+
     ProductFilter = () => {
       
         const brand = this.state.Brand;
@@ -270,6 +279,7 @@ export default class ProductProvider extends Component {
         const condition = this.state.Condition;
         let newProducts = [];
         const resetProducts = this.state.fixedProducts;
+        const sortmethod = this.state.SortMethod;
         if (condition == 'none') {
             newProducts = resetProducts;
             
@@ -288,6 +298,16 @@ export default class ProductProvider extends Component {
         else {
             newProducts = newProducts.filter(item => item.Brand == brand)
         }
+        if(sortmethod == 'default'){
+            newProducts = newProducts;
+        }
+        else if(sortmethod =='lowtohigh'){
+            newProducts = newProducts.sort((a,b) => (a.price >= b.price)? 1:-1)
+        }
+        else if(sortmethod =='hightolow'){
+            newProducts = newProducts.sort((a,b) => (a.price <= b.price)? 1:-1)
+        }
+
         newProducts = newProducts.filter(item => item.price >= minPrice && item.price <= maxPrice)
         newProducts = newProducts.filter(item => item.size >= minSize && item.size <= maxSize)
         this.setState(()=> {
@@ -313,6 +333,7 @@ export default class ProductProvider extends Component {
                 FilterBrand:this.FilterBrand,
                 resetState:this.resetState,
                 FilterSort:this.FilterSort,
+                Sortby:this.Sortby,
 
             }}>
                 {this.props.children}
