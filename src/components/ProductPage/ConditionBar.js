@@ -3,19 +3,14 @@ import {ProductConsumer} from "../../context";
 
 
 export default class ConditionBar extends Component {
-    Bold = (id,id2) => {
-        
-        var boldbar = document.getElementById(id);
-        var lightbar = document.getElementById(id2);
-        if (boldbar.style.fontWeight != 'bold') {
-            boldbar.style.fontWeight = 'bold';
-      
-        }
-        else {
-            boldbar.style.fontWeight = 'normal';
-        }
-        lightbar.style.fontWeight ='normal';
-    }
+    constructor(props) {
+        super(props);
+    
+        this.state = {
+            Condition:'none',
+        };
+      }
+    
     render() {
    
         return (
@@ -39,13 +34,12 @@ export default class ConditionBar extends Component {
                 </div>
     
                 <div id ="condition-range" className ="toggle-title mb-4">
-                        <div id ='new'className ="brand condition-choice" onClick = {()=> {
-                            value.FilterCondition('new');
-                            this.Bold('new','old');
+                        <div id ='new'className = {value.Condition == 'new'? " brandbold ": "brand"} onClick = {()=> {
+                            value.FilterCondition('new');               
+                            console.log(this.state.Condition);
                         }}> New </div>
-                        <div id ='old' className ="brand condition-choice" onClick = {()=> {
-                            value.FilterCondition('old');
-                            this.Bold('old','new');
+                        <div id ='old' className ={value.Condition == 'old'? " brandbold ": "brand"} onClick = {()=> {
+                            value.FilterCondition('old');      
                         }}> Used </div> 
                 </div>
                 </div>
@@ -54,4 +48,5 @@ export default class ConditionBar extends Component {
         </ProductConsumer>
         
         )
-}}
+        }
+    }

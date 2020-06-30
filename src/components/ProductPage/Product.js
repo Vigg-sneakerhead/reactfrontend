@@ -8,7 +8,7 @@ export default class Product extends Component {
     render() {
         const {id, title,img,price,inCart,New} = this.props.product;
         return (
-            <ProductWrapper className ="col-6 col-md-6 col-lg-4 my-3 mr-auto">
+            <ProductWrapper className ="col-6 col-md-6 col-lg-4 my-3 mr-0">
                 <div className="card">
                   <ProductConsumer>
                     {value => ( 
@@ -56,13 +56,14 @@ export default class Product extends Component {
                    
                   </ProductConsumer>
                     <div className="card-footer d-flex justify-content-between">
-                          <p className ="align-self-center mb-0">
+                          <p className ="align-self-center mb-0 text-center">
                               {title}
                               <h5 className ="text-blue font-italic mb-0">
+                                  {price.toFixed(3)}
                                   <span className = "mr-1">
-                                      $
+                                      .000 đ
                                   </span>
-                                  {price}
+                                 
                               </h5>
                           </p>  
                     </div>
@@ -89,7 +90,7 @@ export const ProductWrapper = styled.div`
 .card {
     border-color:transparent;
     transition: all 1s linear;
-    border: 0.04rem solid rgba(0,0,0,0.2);
+    border: 0.01rem solid rgba(0,0,0,0.2);
 }  
 .card-footer{
     background:transparent;

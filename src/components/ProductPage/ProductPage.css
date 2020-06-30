@@ -22,6 +22,14 @@
 .brand:hover {
     color:#A0A0A0;
 }
+.brandbold {
+    cursor: pointer;
+    color:#303030;
+    font-weight: bold;
+}
+.brandbold:hover {
+    color:#A0A0A0;
+}
 .price-range {
     margin-top: 2rem;
 }

@@ -19,7 +19,8 @@ export default class ProductProvider extends Component {
         maxPrice: 30,
         minSize: 4,
         maxSize: 12,
-        Condition:'none', 
+        Condition:'none',
+        SortMethod:'default', 
 
 
     }
@@ -162,13 +163,13 @@ export default class ProductProvider extends Component {
         )
     }
     clearCart = () => {
+        let fixedProducts = this.state.fixedProducts;
+        fixedProducts.forEach(item => item.inCart = false)
         this.setState(
             ()=> {
-            return {cart:[]};
+            return {cart:[],fixedProducts};
             },
             ()=> {
-                this.setProducts();
-                this.resetState();
                 this.addTotals();
         });
     };
@@ -200,6 +201,18 @@ export default class ProductProvider extends Component {
             
         });
         console.log(condition);
+    }
+    FilterSort = sortMethod => {
+        this.setState(()=>{
+            return {SortMethod:sortMethod} 
+            
+        },
+        ()=> {
+            
+            this.ProductFilter();
+            
+        });
+        console.log(sortMethod);
     }
     FilterSize = (min,max) => {
         this.setState(
@@ -256,7 +269,6 @@ export default class ProductProvider extends Component {
         const maxPrice = this.state.maxPrice;
         const condition = this.state.Condition;
         let newProducts = [];
-        const products = this.state.products;
         const resetProducts = this.state.fixedProducts;
         if (condition == 'none') {
             newProducts = resetProducts;
@@ -300,6 +312,7 @@ export default class ProductProvider extends Component {
                 FilterBrand:this.FilterBrand,
                 FilterBrand:this.FilterBrand,
                 resetState:this.resetState,
+                FilterSort:this.FilterSort,
 
             }}>
                 {this.props.children}

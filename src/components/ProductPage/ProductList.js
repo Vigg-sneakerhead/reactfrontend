@@ -25,8 +25,17 @@ export default class ProductList extends Component {
                                 </div>
                                 <div className = "col-lg-9 col-md-9 col-xs-12">
                                     <div className = "container">
+                                        <div className="row mb-3 ml-3 mx-auto">
+                                                <div className = 'align-center justify-content-center text-center my-2'>
+                                                    <i class="fas fa-search"/>
+                                                </div>
+                                    
+                                                <div class="col">
+                                                    <input class="form-control form-control-lg form-control-borderless" type="search" placeholder="Search..."/>
+                                                </div>
+                                        </div>
                                         <div className="row">
-                                            <div className = "col-lg-3 col-md-3 col-xs-3 ml-auto text-center">
+                                            <div className = "col-lg-3 col-md-3 col-xs-3 ml-auto text-right">
                                             <SortByBar/>
                                             </div>
                                         </div>
