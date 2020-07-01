@@ -21,7 +21,7 @@ export default class ProductProvider extends Component {
         maxSize: 12,
         Condition:'none',
         SortMethod:'default', 
-
+        searchValue:'none',
 
     }
     openModal = id => {
@@ -88,8 +88,9 @@ export default class ProductProvider extends Component {
         const minSize= 4;
         const maxSize= 12;
         const Condition ='none';
+        const searchValue ='none';
         this.setState(() => {
-            return {Brand,minPrice,maxPrice,minSize,maxSize,Condition};
+            return {Brand,minPrice,maxPrice,minSize,maxSize,Condition, searchValue};
 
         },
         ()=> {
@@ -259,6 +260,14 @@ export default class ProductProvider extends Component {
         
         console.log(brand);
     }
+    FilterSearch = (searchvalue) => {
+        this.setState(()=> {
+            return {searchValue: searchvalue};
+        },
+        ()=> {
+            this.ProductFilter();
+        });
+    }
 
     Sortby = (method) => {
         this.setState(()=> {
@@ -268,6 +277,7 @@ export default class ProductProvider extends Component {
             this.ProductFilter();
         });
     }
+
 
     ProductFilter = () => {
       
@@ -280,6 +290,7 @@ export default class ProductProvider extends Component {
         let newProducts = [];
         const resetProducts = this.state.fixedProducts;
         const sortmethod = this.state.SortMethod;
+        const searchvalue = this.state.searchValue;
         if (condition == 'none') {
             newProducts = resetProducts;
             
@@ -297,6 +308,12 @@ export default class ProductProvider extends Component {
         }
         else {
             newProducts = newProducts.filter(item => item.Brand == brand)
+        }
+        if (searchvalue =='none') {
+            newProducts = newProducts
+        }
+        else {
+            newProducts = newProducts.filter(item => item.title.toLowerCase().includes(searchvalue))
         }
         if(sortmethod == 'default'){
             newProducts = newProducts;
@@ -334,7 +351,7 @@ export default class ProductProvider extends Component {
                 resetState:this.resetState,
                 FilterSort:this.FilterSort,
                 Sortby:this.Sortby,
-
+                FilterSearch:this.FilterSearch,
             }}>
                 {this.props.children}
             </ProductContext.Provider>

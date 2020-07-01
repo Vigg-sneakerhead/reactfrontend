@@ -8,12 +8,23 @@ import SortByBar from './SortByBar';
 import Footer from '../HomePage/Footer/Footer';
 
 export default class ProductList extends Component {
-
+    constructor(props) {
+        super(props);
+        this.state = {value: ''};
+    
+        this.handleChange = this.handleChange.bind(this);
+      }
+    
+      handleChange(event) {
+        this.setState({value: event.target.value});
+      }
+    
     render() {
+       
         return (
        
              <ProductConsumer>
-                 {value => (
+                 {context => (
                   <React.Fragment>
                     <div className = "py-5">
                         <div className="container">
@@ -31,10 +42,18 @@ export default class ProductList extends Component {
                                                 </div>
                                     
                                                 <div class="col">
-                                                    <input class="form-control form-control-lg form-control-borderless" type="search" placeholder="Search..."/>
+                                                    <form onSubmit={(e) => {
+                                                        e.preventDefault();
+                                                        context.FilterSearch(this.state.value);
+                                                        console.log(this.state.value)
+                                                        }}>
+                                                        <input class="form-control form-control-lg form-control-borderless" value={this.state.value} onChange={this.handleChange} type="search" placeholder="Search..."/>
+                                                    </form>
+                                                    
                                                 </div>
                                         </div>
                                         <div className="row">
+                                            <div className = "col-lg-3 col-md-3 col-xs-3 ml-5 text-left">hello</div>
                                             <div className = "col-lg-3 col-md-3 col-xs-3 ml-auto text-right">
                                             <SortByBar/>
                                             </div>

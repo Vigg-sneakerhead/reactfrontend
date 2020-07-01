@@ -18,7 +18,7 @@ export default function SortByBar() {
                         value.Sortby('default')
                     }
                 }}>
-                    <option value="title" id ='Sort'> </option>
+                    <option value="title" id ='Sort'>Sort by </option>
                     <option value="Pricelow">Price(low to high)</option>
                     <option value="Pricehigh">Price(high to low)</option>
                 </select>
