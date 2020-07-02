@@ -53,7 +53,6 @@ export default class ProductList extends Component {
                                                 </div>
                                         </div>
                                         <div className="row">
-                                            <div className = "col-lg-3 col-md-3 col-xs-3 ml-5 text-left">hello</div>
                                             <div className = "col-lg-3 col-md-3 col-xs-3 ml-auto text-right">
                                             <SortByBar/>
                                             </div>

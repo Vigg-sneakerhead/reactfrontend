@@ -19,7 +19,7 @@ export default function CartTotals({value}) {
                 </div>
                 <span className ="float-sm-right text-title ">
                             total:
-                            <strong>${cartTotal}</strong>
+                            <span>{cartTotal.toFixed(3)}.000 đ</span>
                 </span> 
                         
             </div>   
