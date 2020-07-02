@@ -8,11 +8,14 @@ $(document).ready(function() {
         0:{
           items:1,
         },
-        767:{
+        400:{
           items:2,
         },
-        1200:{
+        800:{
           items:3,
+        },
+        1200:{
+          items:4,
         }
       }
     })
@@ -25,11 +28,14 @@ $(document).ready(function() {
         0:{
           items:1,
         },
-        767:{
+        400:{
           items:2,
         },
-        1200:{
+        800:{
           items:3,
+        },
+        1200:{
+          items:4,
         }
       }
     })
