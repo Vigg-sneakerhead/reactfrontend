@@ -144,7 +144,7 @@ export const ProductWrapper = styled.div`
     background:var(--mainYellow);
     border:none;
     color: var(--mainWhite);
-    font-size:1.3rem;
+    font-size:1rem;
     border-radius:0 0 0 0;
     transition: all 0.5s linear;
 
@@ -160,7 +160,7 @@ export const ProductWrapper = styled.div`
     background:var(--mainRed);
     border:none;
     color: var(--mainWhite);
-    font-size:1.3rem;
+    font-size:1rem;
     border-radius:0 0 0 0;
     transition: all 0.5s linear;
 
