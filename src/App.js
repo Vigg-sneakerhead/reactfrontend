@@ -12,7 +12,8 @@ import Cart from './components/Cart/Cart';
 import Details from './components/Details';
 import ProductList from './components/ProductPage/ProductList';
 import Modal from './components/Modal';
-import HomePage from './components/HomePage/HomePage'
+import HomePage from './components/HomePage/HomePage';
+import LoginPage from './components/LoginPage/LoginPage';
 
 
 
@@ -29,6 +30,7 @@ export default class App extends Component {
                         <Route path = "/cart"component = {Cart}/> 
                         <Route path = "/Gallery"component = {Default}/>
                         <Route path = "/Sell"component = {Default}/>
+                        <Route path = "/Login"component = {LoginPage}/>
                         <Route component = {Default}/>     
                     </Switch>
                 

@@ -41,7 +41,7 @@ export default class NavbarClass extends Component {
                             <Link to="/gallery" style={{color: 'white', textDecoration: 'none'}}> Style </Link>
                         </NavItem>
                         <NavItem className="nav-text">
-                            <Link to="/contact-us" style={{color: 'white', textDecoration: 'none'}}> Log in </Link>
+                            <Link to="/Login" style={{color: 'white', textDecoration: 'none'}}> Log in </Link>
                         </NavItem>
                     </Nav>
                     <Nav className="nav-icons">
