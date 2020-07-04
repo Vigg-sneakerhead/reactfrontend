@@ -12,6 +12,8 @@
     <script src="https://kit.fontawesome.com/defd5dd847.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="owl.carousel.min.css"/>
     <link rel="stylesheet" href="owl.theme.default.min.css"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/blue.css">
   </head>
   <body>
     <hr>
@@ -20,5 +22,20 @@
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <script src="owlcarousel/owl.carousel.min.js"></script>
     <script src="jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/icheck.min.js"></script>  
+        
+    <script>
+    $(document).ready(function(){
+      $('input').iCheck({
+        checkboxClass: 'icheckbox_flat-blue',
+        radioClass: 'iradio_flat-blue'
+      });
+      $(".bank-item").click(function(){
+          $(".bank-item").removeClass("selected");
+          $(this).addClass("selected");
+      });
+    });
+    </script>
   </body>
 </html>

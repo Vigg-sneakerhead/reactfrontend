@@ -8,6 +8,7 @@ import ProductList from './components/ProductPage/ProductList';
 import LoginPage from './components/LoginPage/LoginPage';
 import FrontPage from './components/HomePage/FrontPage';
 import background from './background.jpg';
+import CheckoutPage from './components/CheckoutPage/Checkout';
 
 
 const Routes = () => (
@@ -40,6 +41,9 @@ const Routes = () => (
         </Route>
         <Route exact path = "/login">
             <LoginPage/>
+        </Route>
+        <Route exact path = "/checkout">
+            <CheckoutPage/>
         </Route>
     </Switch>
 );
