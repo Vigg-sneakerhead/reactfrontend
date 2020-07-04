@@ -1,5 +1,4 @@
-import React, { Component } from 'react'
-import { useState } from "react";
+import React, { useState } from "react";
 import { Button, FormGroup, FormControl} from "react-bootstrap";
 import "./Login.css";
 import viggicon from '../vigglogo2.png';

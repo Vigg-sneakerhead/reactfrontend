@@ -1,11 +1,10 @@
-import React, { Component, PureComponent} from 'react';
+import React, { Component} from 'react';
 import Product from "./Product";
 import Title from "../Title";
 import {ProductConsumer} from "../../context";
 import FilterBar from "./FilterBar";
 import './ProductPage.css';
 import SortByBar from './SortByBar';
-import Footer from '../HomePage/Footer/Footer';
 
 export default class ProductList extends Component {
     constructor(props) {
@@ -71,7 +70,6 @@ export default class ProductList extends Component {
                         </div>
                         
                     </div>
-                    <Footer/>
                   </React.Fragment>
                 )}
               </ProductConsumer>

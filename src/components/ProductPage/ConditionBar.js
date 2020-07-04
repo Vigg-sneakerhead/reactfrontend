@@ -34,11 +34,11 @@ export default class ConditionBar extends Component {
                 </div>
     
                 <div id ="condition-range" className ="toggle-title mb-4">
-                        <div id ='new'className = {value.Condition == 'new'? " brandbold ": "brand"} onClick = {()=> {
+                        <div id ='new'className = {value.Condition === 'new'? " brandbold ": "brand"} onClick = {()=> {
                             value.FilterCondition('new');               
                             console.log(this.state.Condition);
                         }}> New </div>
-                        <div id ='old' className ={value.Condition == 'old'? " brandbold ": "brand"} onClick = {()=> {
+                        <div id ='old' className ={value.Condition === 'old'? " brandbold ": "brand"} onClick = {()=> {
                             value.FilterCondition('old');      
                         }}> Used </div> 
                 </div>

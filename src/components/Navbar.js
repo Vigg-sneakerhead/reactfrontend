@@ -1,17 +1,15 @@
 import React, { Component } from 'react';
 import viggicon from './vigg.png';
-import {ButtonContainer} from './button';
 import "./components.css";
 import {ProductConsumer} from '../context';
-import { Navbar, Nav, NavDropdown, NavItem } from 'react-bootstrap';
+import { Navbar, Nav, NavItem } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { LinkContainer } from "react-router-bootstrap";
 
 export default class NavbarClass extends Component {
     render() {
         return (
-            <Navbar fluid="false" collapseOnSelect fixed="top" className="navbar-color" expand='lg'>
-                <div className = 'container'>
+            <Navbar fluid="false" collapseOnSelect fixed="top" className="navbar" expand='lg'>
                 <Navbar.Brand>
                     <a className ='my-auto' href="/">
                         <img alt="Vigg Icon" src={viggicon} className="navbar-brand justify-content-center"/>
@@ -22,29 +20,28 @@ export default class NavbarClass extends Component {
                         <path fillRule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>
                     </svg>
                 </Navbar.Toggle>
-                <Navbar.Collapse >
-                    <Nav className="mx-auto">
-                        
+                <Navbar.Collapse>
+                    <Nav className="mx-auto">  
                         <NavItem className="nav-text">
                             <ProductConsumer>
                                 {value => ( 
-                                <Link to="/Productlist" onClick = {()=> {value.resetState();}} style={{color: 'white', textDecoration: 'none'}}> Mua Giày </Link>
+                                <Link to="/product-list" onClick = {()=> {value.resetState();}} style={{color: 'white', textDecoration: 'none'}}> Mua Giày </Link>
                                 )}
                             </ProductConsumer>
-                           
+                            
                         </NavItem>
                         <NavItem className="nav-text">
-                            <Link to="/Sell" style={{color: 'white', textDecoration: 'none'}}> Bán Giày </Link>
+                            <Link to="/sell" style={{color: 'white', textDecoration: 'none'}}> Bán Giày </Link>
                         </NavItem>
-                       
+                        
                         <NavItem className="nav-text">
                             <Link to="/gallery" style={{color: 'white', textDecoration: 'none'}}> Style </Link>
                         </NavItem>
-                        <NavItem className="nav-text">
-                            <Link to="/Login" style={{color: 'white', textDecoration: 'none'}}> Log in </Link>
-                        </NavItem>
                     </Nav>
                     <Nav className="nav-icons">
+                        <NavItem className="nav-profile">
+                            <Link to="/login" style={{color: 'white', textDecoration: 'none'}}> Log in </Link>
+                        </NavItem>
                         <LinkContainer to="/cart">
                             <div className="nav-icon">
                                 <svg className="bi bi-cart-plus" width="4em" height="4em" viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg" style={{padding:'0px 20px 0px 20px'}}>
@@ -56,7 +53,6 @@ export default class NavbarClass extends Component {
                         </LinkContainer>
                     </Nav>
                 </Navbar.Collapse>
-                </div>
             </Navbar>
         )
     }

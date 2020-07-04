@@ -8,10 +8,10 @@ export default function SortByBar() {
                 <select id = "sort" name="Sort" onChange = {()=> {
                     var zone = document.getElementById("sort");
             
-                    if (zone.value == "Pricelow"){
+                    if (zone.value === "Pricelow"){
                         value.Sortby('lowtohigh')
                     }
-                    else if(zone.value == "Pricehigh"){
+                    else if(zone.value === "Pricehigh"){
                         value.Sortby('hightolow')
                     }
                     else {

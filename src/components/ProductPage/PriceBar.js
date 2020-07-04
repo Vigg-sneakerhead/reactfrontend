@@ -41,7 +41,7 @@ export default class PriceBar extends Component {
                                 minValue={0}
                                 step= {1}
                                 formatLabel={value => {
-                                    if (value == 0) {
+                                    if (value === 0) {
                                         return value
                                     }
                                     else {

@@ -7,9 +7,10 @@ import App from './App';
 import {ProductProvider} from "./context";
 
 ReactDOM.render(
-<ProductProvider>
-  <Router>
-    <App/>
-  </Router>
-</ProductProvider>, document.getElementById('root'));
+  <ProductProvider>
+    <Router>
+      <App/>
+    </Router>
+  </ProductProvider>, document.getElementById('root')
+);
 

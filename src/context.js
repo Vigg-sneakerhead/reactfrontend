@@ -135,7 +135,7 @@ export default class ProductProvider extends Component {
         this.setState(()=>{
             return {detailProduct:product}
         },
-       ()=>{
+        () => {
            this.addTotals()
         })
     }
@@ -165,7 +165,7 @@ export default class ProductProvider extends Component {
     }
     clearCart = () => {
         let fixedProducts = this.state.fixedProducts;
-        fixedProducts.forEach(item => item.inCart = false)
+        fixedProducts.forEach(item => item.inCart = false);
         this.setState(
             ()=> {
             return {cart:[],fixedProducts};
@@ -177,7 +177,7 @@ export default class ProductProvider extends Component {
 
     addTotals = () => {
         let total = 0;
-        this.state.cart.map(item => {total += item.total});
+        this.state.cart.forEach(item => {total += item.total});
         this.setState(()=> {
             return {
                 cartTotal:total
@@ -186,11 +186,8 @@ export default class ProductProvider extends Component {
     }
     FilterCondition = condition => {
         const currentCondition = this.state.Condition;
-        if (condition != currentCondition){
-            condition = condition;
-        }
-        else {
-            condition ='none'
+        if (condition === currentCondition){
+            condition = 'none';
         }
         this.setState(()=>{
             return {Condition:condition} 
@@ -244,11 +241,8 @@ export default class ProductProvider extends Component {
 
     FilterBrand = (brand) => {
         const currentBrand = this.state.Brand;
-        if (brand != currentBrand){
-            brand = brand;
-        }
-        else {
-            brand ='none';
+        if (brand === currentBrand){
+            brand = 'none';
         }
         this.setState(()=>{
             return {Brand:brand}; 
@@ -291,37 +285,35 @@ export default class ProductProvider extends Component {
         const resetProducts = this.state.fixedProducts;
         const sortmethod = this.state.SortMethod;
         const searchvalue = this.state.searchValue;
-        if (condition == 'none') {
+        if (condition === 'none') {
             newProducts = resetProducts;
             
         }
-        else if (condition == 'new') {
+        else if (condition === 'new') {
             newProducts = [...this.state.bestsellers];
           
         } 
-        else if (condition =='old') {
+        else if (condition === 'old') {
             newProducts = [...this.state.secondHand];
             
         }
-        if (brand =='none') {
-            newProducts = newProducts.filter(item => item.Brand != brand)
+        if (brand === 'none') {
+            newProducts = newProducts.filter(item => item.Brand !== brand);
         }
         else {
-            newProducts = newProducts.filter(item => item.Brand == brand)
+            newProducts = newProducts.filter(item => item.Brand === brand);
         }
-        if (searchvalue =='none') {
-            newProducts = newProducts
+        if (searchvalue !== 'none') {
+            newProducts = newProducts.filter(item => item.title.toLowerCase().includes(searchvalue));
+
         }
-        else {
-            newProducts = newProducts.filter(item => item.title.toLowerCase().includes(searchvalue))
+        if(sortmethod === 'default'){
+            // newProducts = newProducts;
         }
-        if(sortmethod == 'default'){
-            newProducts = newProducts;
-        }
-        else if(sortmethod =='lowtohigh'){
+        else if(sortmethod === 'lowtohigh'){
             newProducts = newProducts.sort((a,b) => (a.price >= b.price)? 1:-1)
         }
-        else if(sortmethod =='hightolow'){
+        else if(sortmethod === 'hightolow'){
             newProducts = newProducts.sort((a,b) => (a.price <= b.price)? 1:-1)
         }
 
@@ -346,7 +338,6 @@ export default class ProductProvider extends Component {
                 FilterCondition:this.FilterCondition,
                 FilterSize:this.FilterSize,
                 FilterPrice:this.FilterPrice,
-                FilterBrand:this.FilterBrand,
                 FilterBrand:this.FilterBrand,
                 resetState:this.resetState,
                 FilterSort:this.FilterSort,
