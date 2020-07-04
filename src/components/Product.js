@@ -56,7 +56,7 @@ export default class Product extends Component {
                    
                   </ProductConsumer>
                     <div className="card-footer d-flex justify-content-between">
-                          <p className ="align-self-center mb-0">
+                          <div className ="align-self-center mb-0">
                               {title}
                               <h5 className ="text-blue font-italic mb-0">
                                   <span className = "mr-1">
@@ -64,11 +64,10 @@ export default class Product extends Component {
                                   </span>
                                   {price}
                               </h5>
-                          </p>  
+                          </div>  
                     </div>
                 </div>
-            </ProductWrapper>
-                
+            </ProductWrapper>  
         )
     }
 }

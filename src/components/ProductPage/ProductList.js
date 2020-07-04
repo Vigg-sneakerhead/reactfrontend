@@ -10,7 +10,6 @@ export default class ProductList extends Component {
     constructor(props) {
         super(props);
         this.state = {value: ''};
-    
         this.handleChange = this.handleChange.bind(this);
       }
     
@@ -21,7 +20,6 @@ export default class ProductList extends Component {
     render() {
        
         return (
-       
              <ProductConsumer>
                  {context => (
                   <React.Fragment>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom';
 import {ProductConsumer} from "../context";
-import {ProductWrapper} from './ProductPage/Product';
+import {ProductWrapper} from './Product';
 
 export default class ProductCarousel extends Component {
     render() {
@@ -11,25 +11,25 @@ export default class ProductCarousel extends Component {
                 <div className="card">
                     <ProductConsumer>
                         {value => ( 
-                        <div 
-                            className ="img-container p-5" 
-                            onClick = {() => value.handleDetail(id)}
-                        >
-                            <Link to='/details'>
-                                <img src={img} alt = "product" className ="card-img-top"/>
-                            </Link>
-                            <div disabled = {New?true:false}>
-                                {New?(
-                                    <div  className = "container labelnew mx-auto justify-content-center " disabled>
-                                        <p className="text-capitalize mx-auto text-center align-middle">New</p>
-                                    </div>
-                                ):(
-                                    <div  className = "container labelold mx-auto justify-content-center " disabled>
-                                        <p className="text-capitalize mx-auto text-center align-middle" >Second-hand</p>
-                                    </div>
-                                )}
+                            <div 
+                                className ="img-container p-5" 
+                                onClick = {() => value.handleDetail(id)}
+                            >
+                                <Link to='/details'>
+                                    <img src={img} alt = "product" className ="card-img-top"/>
+                                </Link>
+                                <div disabled = {New?true:false}>
+                                    {New?(
+                                        <div  className = "container labelnew mx-auto justify-content-center " disabled>
+                                            <p className="text-capitalize mx-auto text-center align-middle">New</p>
+                                        </div>
+                                    ):(
+                                        <div  className = "container labelold mx-auto justify-content-center " disabled>
+                                            <p className="text-capitalize mx-auto text-center align-middle">Second-hand</p>
+                                        </div>
+                                    )}
+                                </div>
                             </div>
-                        </div>
                         )}
                     </ProductConsumer>
                     <div className="card-footer d-flex justify-content-between">
@@ -45,7 +45,6 @@ export default class ProductCarousel extends Component {
                     </div>
                 </div>
             </ProductWrapper>
-                
         )
     }
 }

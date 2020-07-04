@@ -1,0 +1,23 @@
+.slick-slider {
+    margin-top: 0.5cm;
+    margin-bottom: 1cm;    
+    text-align: center;
+}
+
+.slick-track {
+    display: flex;
+    align-items: center;
+    margin: auto;
+}
+
+.slick-slide{
+    justify-content: center;
+    align-items: center;
+}
+.slick-arrow {
+    color: white;
+}
+
+.slick-arrow:hover {
+    color: white;
+}

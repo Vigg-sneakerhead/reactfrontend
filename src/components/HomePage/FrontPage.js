@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import frontpageicon from './frontpageicon.png';
-import {ProductConsumer} from "../../context";
-import ProductCarousel from "../ProductCarousel";
 import { Container, Row, Col } from 'react-bootstrap';
-import 'owl.carousel/dist/assets/owl.carousel.min.css';
-import 'owl.carousel/dist/assets/owl.theme.default.min.css';
-
+import './FrontPage.css';
+import Carousel from '../Carousel/Carousel';
 
 export default class FrontPage extends Component {
     render() {
@@ -35,47 +32,19 @@ export default class FrontPage extends Component {
                                     placeholder="Sneakers, brand, designer..."
                                 />
                             </Col>
-                        </Row>              
+                        </Row>         
                         <Row className ="mx-auto text-light">
                             <div id = "title" className ="best-seller-title mr-auto">
                                 <h2>BESTSELLERS TRÊN VIGG</h2>
                             </div>
                         </Row>
-                        <Row>
-                            <div id="new-releases" className="owl-carousel" nav='true'>
-                                <ProductConsumer>
-                                    {value => {
-                                        return ( value.bestsellers.map(product => {
-                                                    return (
-                                                
-                                                        <ProductCarousel key={product.id} product ={product}/>
-                                                    );
-                                            })             
-                                        )
-                                    }}
-                                </ProductConsumer>
-                            </div>
-                        </Row>
+                        <Carousel condition="New"/>
                         <Row className ="mx-auto text-light">
                             <div id = "title" className ="best-seller-title mr-auto">
                                 <h2>DEAL GIÀY TRÊN VIGG</h2>
                             </div>
-                        </Row>
-                        <Row>
-                            <div id="second-hand" className="owl-carousel" nav='true'>
-                                <ProductConsumer>
-                                    {value => {
-                                        return (value.secondHand.map(product => {
-                                                    return (
-                                                
-                                                        <ProductCarousel key={product.id} product ={product}/>
-                                                    );
-                                            })             
-                                        )
-                                    }}
-                                </ProductConsumer>
-                            </div>
-                        </Row>      
+                        </Row>    
+                        <Carousel condition="Old"/>
                     </Container>
                 </FrontPageContainer>
             </React.Fragment>

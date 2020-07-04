@@ -11,9 +11,9 @@ export default class NavbarClass extends Component {
         return (
             <Navbar fluid="false" collapseOnSelect fixed="top" className="navbar" expand='lg'>
                 <Navbar.Brand>
-                    <a className ='my-auto' href="/">
+                    <Link className ='my-auto' to="/">
                         <img alt="Vigg Icon" src={viggicon} className="navbar-brand justify-content-center"/>
-                    </a>
+                    </Link>
                 </Navbar.Brand>
                 <Navbar.Toggle>
                     <svg className="bi bi-justify" width="2em" height="2em" viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg">
