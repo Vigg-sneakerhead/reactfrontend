@@ -14,6 +14,10 @@
     height: 0.8cm;
 }
 
+.card .card-body {
+    text-align: center;
+}
+
 .card .card-footer {
     background: transparent;
     border-top: transparent;
@@ -78,6 +82,7 @@
     font-size:1rem;
     border-radius:0 0 0 0;
     height: 0.8cm; 
+    text-align: center;
 
 }
 .labelnew:hover {
@@ -95,6 +100,7 @@
     font-size:1rem;
     border-radius:0 0 0 0;
     height: 0.8cm;    
+    text-align: center;
 }
 
 .labelold:hover {

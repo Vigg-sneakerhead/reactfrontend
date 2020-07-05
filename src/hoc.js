@@ -5,7 +5,7 @@ const WithContext = (Component) => {
     return (props) => (
         <ProductConsumer>
             {value =>                 
-                <Component {...props} value={value.products}/>
+                <Component {...props} value={value}/>
             }
         </ProductConsumer>
     )

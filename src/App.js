@@ -1,12 +1,11 @@
 import React, {Component} from 'react'; 
-import "./components/HomePage/HomePage.css"
-import "./components/components.css";
-import "./components/HomePage/OwlCarousel.css";
-import './components/HomePage/Footer/Footer.css';
-import Navbar from './components/Navbar';
+// import "./components/HomePage/HomePage.css"
+// import "./components/components.css";
+
+import Navbar from './components/Navbar/Navbar';
 import Modal from './components/Modal';
 import Routes from './Routes';
-import Footer from './components/HomePage/Footer/Footer';
+import Footer from './components/Footer/Footer';
 
 export default class App extends Component {
     render() {

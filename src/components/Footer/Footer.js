@@ -3,7 +3,7 @@ import fb from './footerimg/fb-icon.png';
 import insta from './footerimg/insta-icon.png';
 import lkn from './footerimg/linkedin-icon.png';
 import './Footer.css';
-import logo from '../../vigg.png';
+import logo from '../Navbar/vigg.png';
 
 const Footer = () => (
     <div>

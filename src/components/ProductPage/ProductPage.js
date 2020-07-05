@@ -1,6 +1,6 @@
 import React, { Component} from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import Product from "./Product";
+import Card from '../Card/Card';
 import Title from "../Title";
 import {ProductConsumer} from "../../context";
 import FilterBar from "./FilterBar";
@@ -59,7 +59,7 @@ export default class ProductList extends Component {
                                             {value => {
                                                 return value.products.map(product => {
                                                     console.log(product)
-                                                    return <Product key={product.id} product ={product}/>;
+                                                    return <Card key={product.id} product ={product}/>;
                                                 })
                                             }}
                                         </ProductConsumer>

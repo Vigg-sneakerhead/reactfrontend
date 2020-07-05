@@ -1,0 +1,39 @@
+.background { 
+    position: fixed;
+    width:100%;
+    height: 1430px;
+    object-fit: cover;
+}
+.image-icon {
+    display: block;
+    margin-top: 6rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: 50%;
+    object-fit: cover;
+}
+.row-title {
+    margin-top: -2rem;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    margin-bottom: 1cm;
+}
+
+.best-seller-title {
+    margin-top: 6rem;
+}
+.footer {
+    background-color: black;
+    color:white;
+}
+
+.container .row .search-icon {
+    padding-left: 2cm;
+    padding-right: 0cm;
+}
+
+.container .row input {
+    width: 90%;
+}

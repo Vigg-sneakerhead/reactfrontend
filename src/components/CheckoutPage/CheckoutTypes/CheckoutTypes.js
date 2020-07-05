@@ -8,7 +8,7 @@ const checkoutTypes = (props) => {
                     <input type="radio" name="iCheck" className="iradio_flat-blue"/> 
                     {' '}{props.value}{' '} 
                     {props.value === "Ví" ? (
-                        <img src="assets/images/logo-zalopay.svg" alt=""/>
+                        <img src="assets/images/banks/logo-zalopay.svg" alt=""/>
                     ) : (
                         <span className="txtGray">(qua cổng ZaloPay)</span>
                     )}

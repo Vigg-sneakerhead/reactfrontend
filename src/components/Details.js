@@ -2,15 +2,14 @@ import React, { Component } from 'react'
 import {ProductConsumer} from '../context';
 import {Link} from 'react-router-dom';
 import {ButtonContainer} from './button';
-
-
+import './components.css';
 
 export default class Details extends Component {
     render() {
         return (
             <ProductConsumer>
                 {value => {
-                    const {id,Brand,img,info,price,title,inCart} = value.detailProduct;
+                    const { id, Brand, img, info, price, title, inCart } = value.detailProduct;
                     return(
                         <div className ="container py-5">
                             <div className ="row">
@@ -38,11 +37,11 @@ export default class Details extends Component {
                                             </span>
                                         </strong>
                                     </h4>
-                                    <p className = "text-capitalize font-weight-bold mt-3 mb-0">
+                                    <div className = "text-capitalize font-weight-bold mt-3 mb-0">
                                         <p className = "text-muted lead">
                                             info: {info}
                                         </p>
-                                    </p>  
+                                    </div>  
                                     <div>
                                         <Link to='/Productlist'> 
                                             <ButtonContainer onClick = {()=>{
@@ -69,8 +68,6 @@ export default class Details extends Component {
                     )
                 }}
             </ProductConsumer>
-                
-
         );
     }
 }

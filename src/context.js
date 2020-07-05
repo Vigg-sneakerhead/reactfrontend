@@ -126,7 +126,6 @@ export default class ProductProvider extends Component {
         ()=> {
             this.addTotals();
         })
-
     }
     increment = id => {
         const product = this.getItem(id);

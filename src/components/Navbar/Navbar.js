@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import viggicon from './vigg.png';
-import "./components.css";
-import {ProductConsumer} from '../context';
+import "./Navbar.css";
+import {ProductConsumer} from '../../context';
 import { Navbar, Nav, NavItem } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { LinkContainer } from "react-router-bootstrap";
@@ -25,7 +25,7 @@ export default class NavbarClass extends Component {
                         <NavItem className="nav-text">
                             <ProductConsumer>
                                 {value => ( 
-                                <Link to="/product-list" onClick = {()=> {value.resetState();}} style={{color: 'white', textDecoration: 'none'}}> Mua Giày </Link>
+                                <Link to="/product-page" onClick = {()=> {value.resetState();}} style={{color: 'white', textDecoration: 'none'}}> Mua Giày </Link>
                                 )}
                             </ProductConsumer>
                             
