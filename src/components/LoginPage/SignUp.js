@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
+import { Container, Form, Row, Col, Button } from 'react-bootstrap';
 import{Link} from 'react-router-dom';
 import viggicon from '../vigglogo2.png';
+import './SignUp.css';
+
 export default class SignUp extends Component {
     render() {
         return (
-            <div className ="container">
-                <div className ="col-8 mx-auto col-md-6 col-lg-4 p-2 signuppanel">
-                    <form>
+            <Container>
+                <Col lg={4} md={6} className="signuppanel mx-auto col-8 p-2">
+                    <Form>
                         <div className = "text-center mb-4">
                             <img alt="Vigg Icon" src={viggicon} className="logologin justify-content-center"/>
                         </div>
@@ -39,20 +42,22 @@ export default class SignUp extends Component {
                             <input type="password" className="form-control" placeholder="ex. 123456789999" />
                         </div>
 
-                        <button type="submit" className="btn btn-primary btn-block">Sign Up</button>
-                        <div className ="row my-5 ">
-                            <div className ='col text-center'>
+                        <Button className="signup-btn"variant="primary" type="submit" style={{"width":"100%"}}>
+                            Sign Up
+                        </Button>
+                        <Row className="my-5">
+                            <Col className="text-center">
                                 Đã là thành viên? 
                                 <Link to='/login' className ="ml-2">
-                                <u>
-                                    Log in
-                                </u>
+                                    <u>
+                                        Log in
+                                    </u>
                                 </Link> 
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
+                            </Col>
+                        </Row>
+                    </Form>
+                </Col>
+            </Container>
         )
     }
 }
