@@ -37,6 +37,9 @@ const Routes = () => (
         <Route exact path = "/gallery">
             <Default/>
         </Route>
+        <Route exact path = "/sell">
+            <SellPage/>
+        </Route>
         <Route exact path = "/how-to-sell">
             <BigCarousel/>
         </Route>
