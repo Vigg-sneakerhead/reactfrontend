@@ -11,5 +11,14 @@
 
   .loginpanel {
       background-color: white;
-      margin-top: 10rem;
+      margin-top: 8rem;
+  }
+  .signuppanel {
+    background-color: white;
+    margin-top: 4rem;
+}
+  .logologin {
+    height: 80%;
+    width: 80%;
+    object-fit: contain;
   }

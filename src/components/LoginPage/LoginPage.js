@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { Button, FormGroup, FormControl} from "react-bootstrap";
+import { Button, FormGroup, FormControl, Col} from "react-bootstrap";
 import "./Login.css";
 import viggicon from '../vigglogo2.png';
+import {Link} from 'react-router-dom';
 
 export default function LoginPage() {
     const [email, setEmail] = useState("");
@@ -17,9 +18,9 @@ export default function LoginPage() {
   
     return (
       <div className ="container">
-        <div className ="col-8 mx-auto col-md-6 col-lg-4 p-5 loginpanel">
+        <div className ="col-8 mx-auto col-md-6 col-lg-4 p-2 loginpanel">
           <div className = "text-center">
-            <img alt="Vigg Icon" src={viggicon} className="navbar-brand justify-content-center"/>
+            <img alt="Vigg Icon" src={viggicon} className="logologin justify-content-center"/>
           </div>
           <div className="Login">
             <form onSubmit={handleSubmit}>
@@ -40,10 +41,37 @@ export default function LoginPage() {
                   type="password"
                 />
               </FormGroup>
+              <FormGroup>
+                    <div className="ml-0">
+                            <input type="checkbox" id="customCheck1" />
+                            <label for ="customCheck1 ">Remember me</label>
+                    </div>
+              </FormGroup>
+                
               <Button block bsSize="large" disabled={!validateForm()} type="submit">
                 Login
               </Button>
             </form>
+            <div className ="row my-1 ">
+              <div className ='col text-right'>
+                Forgot
+                <Link to='/forgotpassword' className ="ml-1 text-primary">
+                  <u>
+                    password?
+                  </u>
+                </Link> 
+              </div>
+            </div>
+            <div className ="row my-5 ">
+              <div className ='col text-center'>
+                Not a member? 
+                <Link to='/signup' className ="ml-2">
+                  <u>
+                    Sign up now
+                  </u>
+                </Link> 
+              </div>
+            </div>
           </div>
         </div>
         

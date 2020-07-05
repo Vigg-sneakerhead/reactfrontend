@@ -9,7 +9,7 @@ class card extends Component {
     render () {
     const { id, title, img, price, inCart, New } = this.props.product;
     return(
-        <Card>
+        <Card className ="ml-0">
             <Card.Header>
                 {New ?
                 (

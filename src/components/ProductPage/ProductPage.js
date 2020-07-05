@@ -54,7 +54,7 @@ export default class ProductList extends Component {
                                             <SortByBar/>
                                         </Col>
                                     </Row>
-                                    <Row>
+                                    <Row className ="ml-auto">
                                         <ProductConsumer>
                                             {value => {
                                                 return value.products.map(product => {

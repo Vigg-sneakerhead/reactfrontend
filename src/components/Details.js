@@ -43,7 +43,7 @@ export default class Details extends Component {
                                         </p>
                                     </div>  
                                     <div>
-                                        <Link to='/Productlist'> 
+                                        <Link to='/product-page'> 
                                             <ButtonContainer onClick = {()=>{
                                                 value.resetState();
                                             }}>

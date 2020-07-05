@@ -7,6 +7,7 @@ import ProductPage from './components/ProductPage/ProductPage';
 import LoginPage from './components/LoginPage/LoginPage';
 import FrontPage from './components/FrontPage/FrontPage';
 import CheckoutPage from './components/CheckoutPage/Checkout';
+import SignUp from './components/LoginPage/SignUp';
 
 
 const Routes = () => (
@@ -39,6 +40,9 @@ const Routes = () => (
         </Route>
         <Route exact path = "/login">
             <LoginPage/>
+        </Route>
+        <Route exact path = "/signup">
+            <SignUp/>
         </Route>
         <Route exact path = "/checkout">
             <CheckoutPage/>
