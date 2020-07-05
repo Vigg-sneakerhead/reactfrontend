@@ -1,4 +1,5 @@
 import React, { Component} from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
 import Product from "./Product";
 import Title from "../Title";
 import {ProductConsumer} from "../../context";
@@ -11,68 +12,65 @@ export default class ProductList extends Component {
         super(props);
         this.state = {value: ''};
         this.handleChange = this.handleChange.bind(this);
-      }
+    }
     
-      handleChange(event) {
+    handleChange(event) {
         this.setState({value: event.target.value});
-      }
-    
+    }
     render() {
-       
         return (
-             <ProductConsumer>
-                 {context => (
-                  <React.Fragment>
-                    <div className = "py-5">
-                        <div className="container">                    
-                            <Title name = "Sneakers"/>
-                            <div className = "row my-3">
-                                <div className ="col-lg-3 col-md-3 col-xs-12">
-                                    <FilterBar/>
-                                </div>
-                                <div className = "col-lg-9 col-md-9 col-xs-12">
-                                    <div className = "container">
-                                        <div className="row mb-3 ml-3 mx-auto">
-                                                <div className = 'align-center justify-content-center text-center my-2'>
-                                                    <i class="fas fa-search"/>
-                                                </div>
-                                    
-                                                <div class="col">
-                                                    <form onSubmit={(e) => {
-                                                        e.preventDefault();
-                                                        context.FilterSearch(this.state.value);
-                                                        console.log(this.state.value)
-                                                        }}>
-                                                        <input class="form-control form-control-lg form-control-borderless" value={this.state.value} onChange={this.handleChange} type="search" placeholder="Search..."/>
-                                                    </form>
-                                                    
-                                                </div>
+            <ProductConsumer>
+                {context => (
+                <React.Fragment>
+                    <Container className="py-5">
+                        <Title name = "Sneakers"/>
+                        <Row className="my-3">
+                            <Col lg={3} md={3} xs={12}>
+                                <FilterBar/>
+                            </Col>
+                            <Col lg={9} md={9} xs={12}>
+                                <Container>
+                                    <Row className="mb-3 ml-3 mx-auto">
+                                        <div className = 'align-center justify-content-center text-center my-2'>
+                                            <i className="fas fa-search"/>
                                         </div>
-                                        <div className="row">
-                                            <div className = "col-lg-3 col-md-3 col-xs-3 ml-auto text-right">
+                                        <Col>
+                                            <form onSubmit={(e) => {
+                                                e.preventDefault();
+                                                context.FilterSearch(this.state.value);
+                                                console.log(this.state.value)
+                                            }}>
+                                                <input 
+                                                    className="form-control form-control-lg form-control-borderless" 
+                                                    value={this.state.value} 
+                                                    onChange={this.handleChange} 
+                                                    type="search" 
+                                                    placeholder="Search..."/>
+                                            </form>
+                                        </Col>
+                                    </Row>
+                                    <Row>
+                                        <Col lg={3} md={3} xs={3} className = "ml-auto text-right mb-3">
                                             <SortByBar/>
-                                            </div>
-                                        </div>
-                                        <div className ="row">
-                                            <ProductConsumer>
-                                                {value => {
-                                                    return value.products.map(product => {
-                                                        return <Product key={product.id} product ={product}/>;
-                                                    })
-                                                }}
-                                            </ProductConsumer>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div>
-                  </React.Fragment>
+                                        </Col>
+                                    </Row>
+                                    <Row>
+                                        <ProductConsumer>
+                                            {value => {
+                                                return value.products.map(product => {
+                                                    console.log(product)
+                                                    return <Product key={product.id} product ={product}/>;
+                                                })
+                                            }}
+                                        </ProductConsumer>
+                                    </Row>
+                                </Container>
+                            </Col>
+                        </Row>
+                    </Container>                    
+                </React.Fragment>
                 )}
-              </ProductConsumer>
-           
-                
+            </ProductConsumer>
         );
     }
 }

@@ -10,6 +10,17 @@ export default class Product extends Component {
         const { id, title, img, price, inCart, New } = this.props.product;
         return (
             <Card>
+                <Card.Header>
+                    {New?(
+                        <div  className = "container labelnew mx-auto justify-content-center " disabled>
+                            <p className="text-capitalize mx-auto text-center align-middle" >New</p>
+                        </div>
+                    ):(
+                        <div  className = "container labelold mx-auto justify-content-center " disabled>
+                            <p className="text-capitalize mx-auto text-center align-middle">Second-hand</p>
+                        </div>
+                    )}
+                </Card.Header>
                 <ProductConsumer>
                     {value => ( 
                         <div 
@@ -28,25 +39,12 @@ export default class Product extends Component {
                                 }}
                             >
                                 {inCart?(
-                                <p className="text-capitalize mb-0" disabled>
-                                    in Cart
-                                </p>
+                                    <p className="text-capitalize mb-0" disabled>
+                                        in Cart
+                                    </p>
                                 ):(
                                 <i className="fas fa-cart-plus"/>)}
                             </button>
-                            <div 
-                                disabled = {New?true:false} 
-                            >
-                                {New?(
-                                    <div  className = "container labelnew mx-auto justify-content-center " disabled>
-                                        <p className="text-capitalize mx-auto text-center align-middle" >New</p>
-                                    </div>
-                                ):(
-                                    <div  className = "container labelold mx-auto justify-content-center " disabled>
-                                        <p className="text-capitalize mx-auto text-center align-middle">Second-hand</p>
-                                    </div>
-                                )}
-                            </div>
                         </div>
                     )}
                 </ProductConsumer>

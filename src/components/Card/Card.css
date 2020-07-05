@@ -10,6 +10,10 @@
     margin-bottom: 0.5cm;
 }
 
+.card .card-header {
+    height: 0.8cm;
+}
+
 .card .card-footer {
     background: transparent;
     border-top: transparent;
@@ -19,9 +23,10 @@
 
 .card .card-footer:hover {
     background: rgb(187, 187, 187);
+    transition: all 1s linear; 
 }
 
-.card .card-body .img-container {
+.card .img-container {
     position: relative;
     overflow: hidden;
     background-color: white;
@@ -42,6 +47,7 @@
 }
 
 .cart-btn {
+    font-size: 1.4rem;
     position: absolute;
     bottom: 0;
     right: 0;

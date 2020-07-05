@@ -274,7 +274,6 @@ export default class ProductProvider extends Component {
 
 
     ProductFilter = () => {
-      
         const brand = this.state.Brand;
         const minSize = this.state.minSize;
         const maxSize = this.state.maxSize;
