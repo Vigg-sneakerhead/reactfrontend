@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import viggicon from './vigg.png';
 import "./Navbar.css";
 import {ProductConsumer} from '../../context';
-import { Navbar, Nav, NavItem } from 'react-bootstrap';
+import { Navbar, Nav, NavItem, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { LinkContainer } from "react-router-bootstrap";
 
@@ -36,6 +36,13 @@ export default class NavbarClass extends Component {
                         
                         <NavItem className="nav-text">
                             <Link to="/gallery" style={{color: 'white', textDecoration: 'none'}}> Style </Link>
+                        </NavItem>
+                        <NavItem>
+                            <LinkContainer to="/how-to-sell">
+                                <Button variant="outline-secondary" className="nav-text how-to-sell-btn">
+                                    Trở thành seller
+                                </Button>
+                            </LinkContainer>
                         </NavItem>
                     </Nav>
                     <Nav className="nav-icons">

@@ -9,6 +9,7 @@ import FrontPage from './components/FrontPage/FrontPage';
 import CheckoutPage from './components/CheckoutPage/Checkout';
 import SignUp from './components/LoginPage/SignUp';
 import SellPage from './components/SellPage/SellPage';
+import BigCarousel from './components/BigCarousel/BigCarousel';
 
 
 const Routes = () => (
@@ -36,8 +37,8 @@ const Routes = () => (
         <Route exact path = "/gallery">
             <Default/>
         </Route>
-        <Route exact path = "/sell">
-            <SellPage/>
+        <Route exact path = "/how-to-sell">
+            <BigCarousel/>
         </Route>
         <Route exact path = "/login">
             <LoginPage/>
