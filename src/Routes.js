@@ -8,6 +8,7 @@ import LoginPage from './components/LoginPage/LoginPage';
 import FrontPage from './components/FrontPage/FrontPage';
 import CheckoutPage from './components/CheckoutPage/Checkout';
 import SignUp from './components/LoginPage/SignUp';
+import SellFrontPage from './components/SellPage/SellFrontPage';
 
 
 const Routes = () => (
@@ -18,7 +19,7 @@ const Routes = () => (
                     alt="background"
                     className="background" 
                     src="assets/images/background.jpg"
-                    style={{"position":"absolute", "zIndex":-1,}}
+                    style={{"position":"fixed", "zIndex":-1, objectFit:'cover', height: '100%', width: '100%'}}
                 />
                 <FrontPage/>
             </div>
@@ -36,7 +37,7 @@ const Routes = () => (
             <Default/>
         </Route>
         <Route exact path = "/sell">
-            <Default/>
+            <SellFrontPage/>
         </Route>
         <Route exact path = "/login">
             <LoginPage/>
