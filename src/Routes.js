@@ -8,7 +8,7 @@ import LoginPage from './components/LoginPage/LoginPage';
 import FrontPage from './components/FrontPage/FrontPage';
 import CheckoutPage from './components/CheckoutPage/Checkout';
 import SignUp from './components/LoginPage/SignUp';
-import SellFrontPage from './components/SellPage/SellFrontPage';
+import SellPage from './components/SellPage/SellPage';
 
 
 const Routes = () => (
@@ -37,7 +37,7 @@ const Routes = () => (
             <Default/>
         </Route>
         <Route exact path = "/sell">
-            <SellFrontPage/>
+            <SellPage/>
         </Route>
         <Route exact path = "/login">
             <LoginPage/>

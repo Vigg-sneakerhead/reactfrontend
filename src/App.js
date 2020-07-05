@@ -1,6 +1,4 @@
 import React, {Component} from 'react'; 
-// import "./components/HomePage/HomePage.css"
-// import "./components/components.css";
 
 import Navbar from './components/Navbar/Navbar';
 import Modal from './components/Modal';

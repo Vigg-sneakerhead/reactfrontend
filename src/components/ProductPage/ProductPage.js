@@ -58,7 +58,7 @@ export default class ProductList extends Component {
                                         <ProductConsumer>
                                             {value => {
                                                 return value.products.map(product => {
-                                                    console.log(product)
+                                                    // console.log(product)
                                                     return <Card key={product.id} product ={product}/>;
                                                 })
                                             }}
