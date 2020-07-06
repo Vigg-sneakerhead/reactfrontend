@@ -7,11 +7,10 @@ import LoginPage from './components/LoginPage/LoginPage';
 import FrontPage from './components/FrontPage/FrontPage';
 import CheckoutPage from './components/CheckoutPage/Checkout';
 import SignUp from './components/LoginPage/SignUp';
-// import SellPage from './components/SellPage/SellPage';
+import SellPage from './components/SellPage/SellPage';
 import BigCarousel from './components/BigCarousel/BigCarousel';
 import NotFound from './components/NotFound/NotFound';
 import HowToShip from './components/HowToSell/HowToShip';
-import HowToPost from './components/HowToSell/HowToPost';
 import ImageStandard from './components/HowToSell/Standard/ImageStandard';
 
 
@@ -41,9 +40,9 @@ const Routes = () => (
         {/* <Route exact path = "/gallery">
             <Default/>
         </Route> */}
-        {/* <Route exact path = "/sell">
+        <Route exact path = "/sell">
             <SellPage/>
-        </Route> */}
+        </Route>
         <Route exact path = "/how-to-sell">
             <BigCarousel/>
         </Route>
@@ -56,9 +55,6 @@ const Routes = () => (
                     style={{"position":"fixed", "zIndex":-1, objectFit:'cover', height: '100%', width: '100%'}}
                 />
             <ImageStandard/>
-        </Route>
-        <Route exact path = "/how-to-post">
-            <HowToPost/>
         </Route>
         <Route exact path = "/how-to-ship">    
             <HowToShip/>
