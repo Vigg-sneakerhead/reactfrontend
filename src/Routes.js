@@ -10,9 +10,9 @@ import SignUp from './components/LoginPage/SignUp';
 import SellPage from './components/SellPage/SellPage';
 import BigCarousel from './components/BigCarousel/BigCarousel';
 import NotFound from './components/NotFound/NotFound';
-import HowToShip from './components/SellPage/HowToShip';
-import HowToPost from './components/SellPage/HowToPost';
-import ImageStandard from './components/SellPage/ImageStandard';
+import HowToShip from './components/HowToSell/HowToShip';
+import HowToPost from './components/HowToSell/HowToPost';
+import ImageStandard from './components/HowToSell/Standard/ImageStandard';
 
 
 
@@ -41,9 +41,9 @@ const Routes = () => (
         {/* <Route exact path = "/gallery">
             <Default/>
         </Route> */}
-        <Route exact path = "/sell">
+        {/* <Route exact path = "/sell">
             <SellPage/>
-        </Route>
+        </Route> */}
         <Route exact path = "/how-to-sell">
             <BigCarousel/>
         </Route>
@@ -52,12 +52,11 @@ const Routes = () => (
             <img 
                     alt="background"
                     className="background" 
-                    src="assets/images/how-to-sell/standard/backgroundstandard.jpg"
+                    src="assets/images/how-to-sell/standard/standard-background.jpg"
                     style={{"position":"fixed", "zIndex":-1, objectFit:'cover', height: '100%', width: '100%'}}
                 />
             <ImageStandard/>
         </Route>
-
         <Route exact path = "/how-to-post-shoes">
             <HowToPost/>
         </Route>
