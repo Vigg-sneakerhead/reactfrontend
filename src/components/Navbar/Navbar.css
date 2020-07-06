@@ -11,14 +11,15 @@
     margin-right: 0;
 }
 
-.navbar .nav-profile {
+.navbar .nav-icons .nav-profile a {
     font-family: 'Sarabun', sans-serif;
     font-size: 100%;
     margin-right: 0.5cm;
+    color: white;
 }
 
-.navbar .nav-profile:hover {
-    font-weight: 700;
+.navbar .nav-icons .nav-profile a:hover {
+    color: rgb(154, 145, 145);
 }
 
 @media (min-width: 992px) {
@@ -34,11 +35,19 @@
     padding-bottom: 8px;
     padding-left: 0.5cm;
     padding-right: 0.5cm;
-    color: white;
     background-color: transparent;
     cursor: pointer;
     margin-right: 0.5cm;
     margin-left: 0.5cm;
+}
+
+.navbar .mx-auto .nav-text a {
+    color: white
+}
+
+.navbar .mx-auto a:hover {
+    /* font-weight: 700; */
+    color: rgb(154, 145, 145);
 }
 
 .how-to-sell-btn {
@@ -50,9 +59,6 @@
     font-style: italic;
 }
 
-.navbar .mx-auto .nav-text:hover {
-    font-weight: 700;
-}
 
 @media (max-width: 1305px) {
     .nav-profile,

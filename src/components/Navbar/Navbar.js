@@ -25,17 +25,17 @@ export default class NavbarClass extends Component {
                         <NavItem className="nav-text">
                             <ProductConsumer>
                                 {value => ( 
-                                <Link to="/product-page" onClick = {()=> {value.resetState();}} style={{color: 'white', textDecoration: 'none'}}> Mua Giày </Link>
+                                <Link to="/product-page" onClick = {()=> {value.resetState();}} style={{textDecoration: 'none'}}> Mua Giày </Link>
                                 )}
                             </ProductConsumer>
                             
                         </NavItem>
                         <NavItem className="nav-text">
-                            <Link to="/sell" style={{color: 'white', textDecoration: 'none'}}> Bán Giày </Link>
+                            <Link to="/sell" style={{textDecoration: 'none'}}> Bán Giày </Link>
                         </NavItem>
                         
                         <NavItem className="nav-text">
-                            <Link to="/gallery" style={{color: 'white', textDecoration: 'none'}}> Style </Link>
+                            <Link to="/gallery" style={{textDecoration: 'none'}}> Style </Link>
                         </NavItem>
                         <NavItem>
                             <LinkContainer to="/how-to-sell">
@@ -47,7 +47,7 @@ export default class NavbarClass extends Component {
                     </Nav>
                     <Nav className="nav-icons">
                         <NavItem className="nav-profile">
-                            <Link to="/login" style={{color: 'white', textDecoration: 'none'}}> Log in </Link>
+                            <Link to="/login" style={{textDecoration: 'none'}}> Log in </Link>
                         </NavItem>
                         <LinkContainer to="/cart">
                             <div className="nav-icon">
