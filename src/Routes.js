@@ -10,6 +10,10 @@ import SignUp from './components/LoginPage/SignUp';
 import SellPage from './components/SellPage/SellPage';
 import BigCarousel from './components/BigCarousel/BigCarousel';
 import NotFound from './components/NotFound/NotFound';
+import HowToShip from './components/SellPage/HowToShip';
+import HowToPost from './components/SellPage/HowToPost';
+import ImageStandard from './components/SellPage/ImageStandard';
+
 
 
 const Routes = () => (
@@ -42,6 +46,23 @@ const Routes = () => (
         </Route>
         <Route exact path = "/how-to-sell">
             <BigCarousel/>
+        </Route>
+
+        <Route exact path = "/image-standards"> 
+            <img 
+                    alt="background"
+                    className="background" 
+                    src="assets/images/how-to-sell/standard/backgroundstandard.jpg"
+                    style={{"position":"fixed", "zIndex":-1, objectFit:'cover', height: '100%', width: '100%'}}
+                />
+            <ImageStandard/>
+        </Route>
+
+        <Route exact path = "/how-to-post-shoes">
+            <HowToPost/>
+        </Route>
+        <Route exact path = "/how-to-ship">
+            <HowToShip/>
         </Route>
         <Route exact path = "/login">
             <LoginPage/>
