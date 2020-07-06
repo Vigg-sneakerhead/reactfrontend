@@ -7,7 +7,7 @@ import LoginPage from './components/LoginPage/LoginPage';
 import FrontPage from './components/FrontPage/FrontPage';
 import CheckoutPage from './components/CheckoutPage/Checkout';
 import SignUp from './components/LoginPage/SignUp';
-import SellPage from './components/SellPage/SellPage';
+// import SellPage from './components/SellPage/SellPage';
 import BigCarousel from './components/BigCarousel/BigCarousel';
 import NotFound from './components/NotFound/NotFound';
 import HowToShip from './components/HowToSell/HowToShip';
@@ -57,7 +57,7 @@ const Routes = () => (
                 />
             <ImageStandard/>
         </Route>
-        <Route exact path = "/how-to-post-shoes">
+        <Route exact path = "/how-to-post">
             <HowToPost/>
         </Route>
         <Route exact path = "/how-to-ship">    
