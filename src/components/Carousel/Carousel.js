@@ -65,6 +65,7 @@ class Carousel extends Component {
                     if ((product.New === false) && (this.props.condition === "Old")) {
                         return <Card key={product.id} product={product}/>
                     }
+                    return null;
                 })
             }
         </Slider>

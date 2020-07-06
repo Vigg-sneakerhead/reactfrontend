@@ -1,6 +1,5 @@
 import React from 'react'; 
 import {Switch, Route} from 'react-router-dom';
-import Default from './components/Default';
 import Cart from './components/Cart/Cart';
 import Details from './components/Details';
 import ProductPage from './components/ProductPage/ProductPage';
@@ -10,6 +9,7 @@ import CheckoutPage from './components/CheckoutPage/Checkout';
 import SignUp from './components/LoginPage/SignUp';
 import SellPage from './components/SellPage/SellPage';
 import BigCarousel from './components/BigCarousel/BigCarousel';
+import NotFound from './components/NotFound/NotFound';
 
 
 const Routes = () => (
@@ -34,9 +34,9 @@ const Routes = () => (
         <Route exact path = "/cart">
             <Cart/>
         </Route>
-        <Route exact path = "/gallery">
+        {/* <Route exact path = "/gallery">
             <Default/>
-        </Route>
+        </Route> */}
         <Route exact path = "/sell">
             <SellPage/>
         </Route>
@@ -51,6 +51,9 @@ const Routes = () => (
         </Route>
         <Route exact path = "/checkout">
             <CheckoutPage/>
+        </Route>
+        <Route>
+            <NotFound/>
         </Route>
     </Switch>
 );
