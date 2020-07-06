@@ -2,7 +2,7 @@
     padding-top: 2cm;
     width: 60%;
     background-color: white;
-    padding-bottom: 3cm;
+    padding-bottom: 1cm;
 }
 
 .sell-page .container h1 {
@@ -24,4 +24,15 @@
     color: gray;
     margin-top: 1cm;
     margin-bottom: 1cm;
+}
+
+.sell-page .container a h6 {
+    font-style: italic;
+    text-align: left;
+    margin-top: 3cm;
+    color: black;
+}
+
+.sell-page .container a h6:hover {
+    color: blue;
 }

@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
-import { Container, Col, Form, Button, FormLabel } from 'react-bootstrap';
+import { Container, Row, Col, Form, Button, FormLabel } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import './SellPage.css';
 
 const SellPage = (props) => {
@@ -129,7 +130,7 @@ const SellPage = (props) => {
             />
             <Container style={{alignItems:'center'}}>
                 <Form>
-                    <h1 className="mb-5">Bán giày cùng VIGG</h1>
+                    <h1 className="mb-5">Đồng hành cùng VIGG</h1>
                     {formInfo}
                     <h2>ẢNH TOÀN DIỆN THEO TIÊU CHUẨN CỦA VIGG (*)</h2>
                     {formPics}
@@ -153,6 +154,7 @@ const SellPage = (props) => {
                         Submit
                     </Button>
                 </Form>
+                <Link to="/image-standards"><h6>(*) Bấm vào đây để xem tiêu chuẩn đơn hàng!</h6></Link>
             </Container>
         </div>
     );

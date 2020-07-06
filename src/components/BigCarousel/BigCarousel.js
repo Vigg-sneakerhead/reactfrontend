@@ -53,7 +53,7 @@ const bigCarousel = () => {
                         <h1 style={{"color": "white", "textAlign": "right"}}>BƯỚC 2: GỬI ẢNH QUA </h1>
                         <h1 style={{"color": "white", "textAlign": "right"}}>VIGG ĐỂ ĐƯỢC</h1>
                         <h1 style={{"color": "white", "textAlign": "right"}}>LEGIT-CHECK.</h1>
-                        <LinkContainer to="/how-to-post-shoes">
+                        <LinkContainer to="/sell">
                             <Button variant="outline-secondary" size="lg">
                                 GỬI ẢNH
                             </Button>
