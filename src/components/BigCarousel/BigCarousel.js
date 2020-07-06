@@ -26,7 +26,7 @@ const bigCarousel = () => {
                     className="d-block w-100"
                     src="assets/images/how-to-sell/sell-step1.jpg"
                     alt="how-to-sell"
-                    height="950px"
+                    height="950px" 
                 />
                 <Carousel.Caption>
                     <div className="steps">

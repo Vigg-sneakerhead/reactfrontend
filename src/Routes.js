@@ -61,7 +61,7 @@ const Routes = () => (
         <Route exact path = "/how-to-post-shoes">
             <HowToPost/>
         </Route>
-        <Route exact path = "/how-to-ship">
+        <Route exact path = "/how-to-ship">    
             <HowToShip/>
         </Route>
         <Route exact path = "/login">
