@@ -57,6 +57,12 @@ const Routes = () => (
             <ImageStandard/>
         </Route>
         <Route exact path = "/how-to-ship">    
+            <img 
+                alt="background"
+                className ="background"
+                src="assets/images/how-to-sell/ship/backgroundship.jpg"
+                style={{"position":"fixed", "zIndex":-1, objectFit:'cover', height: '100%', width: '100%'}}
+            />
             <HowToShip/>
         </Route>
         <Route exact path = "/login">
