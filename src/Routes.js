@@ -12,6 +12,7 @@ import BigCarousel from './components/BigCarousel/BigCarousel';
 import NotFound from './components/NotFound/NotFound';
 import HowToShip from './components/HowToSell/HowToShip';
 import ImageStandard from './components/HowToSell/Standard/ImageStandard';
+import ProfilePage from './components/ProfilePage/ProfilePage';
 
 
 
@@ -73,6 +74,15 @@ const Routes = () => (
         </Route>
         <Route exact path = "/checkout">
             <CheckoutPage/>
+        </Route>
+        <Route exact path = "/myaccount">
+        <img 
+                alt="background"
+                className ="background"
+                src="assets/images/profile/profilepagebackground.jpg"
+                style={{"position":"fixed", "zIndex":-1, objectFit:'cover', height: '100%', width: '100%'}}
+            />
+            <ProfilePage/>
         </Route>
         <Route>
             <NotFound/>

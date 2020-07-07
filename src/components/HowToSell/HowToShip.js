@@ -34,7 +34,7 @@ export default class HowToShip extends Component {
                 <div className ="col-8 infobox2">
                     <div className ="ml-5 mt-3">1. Sau khi giày đến tay người mua, Vigg sẽ là đơn vị tận tay nhận tiền từ khách hàng.</div>
                     <div className ="ml-5 mt-3">2. Vigg sẽ thu 5% phí dịch vụ trên mỗi giao dịch.</div>
-                    <div className ="ml-5 mt-3">3. Sau đó Vigg sẽ giải ngân 95% số tiền còn lại của giao dịch qua tài khoản ngân hàng của bạn.</div>
+                    <div className ="ml-5 mt-3 mb-3">3. Sau đó Vigg sẽ giải ngân 95% số tiền còn lại của giao dịch qua tài khoản ngân hàng của bạn.</div>
                 </div>
             </div>
         </div>
