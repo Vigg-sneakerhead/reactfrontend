@@ -25,7 +25,7 @@ export default class HowToShip extends Component {
                     <div className ="ml-5 mt-3 mb-3">4. Sau khi giày được kiểm duyệt, Vigg sẽ đảm bảo giày đến tận tay người mua.</div>
                 </div>
             </div>
-            <div className="row mt-5 mb-3"style ={{paddingBottom:"2cm"}}>
+            <div className="row mt-5 mb-3" style ={{paddingBottom:"7cm"}}>
                 <div className ="col-4 text-center justify-content-center titlebox2">
                    <h2 className ="mt-5" >
                    NHẬN GIÀY
