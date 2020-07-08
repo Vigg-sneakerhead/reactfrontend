@@ -6,7 +6,25 @@ export default class ProfilePage extends Component {
     state = {
         show: 'profile',
     }
-
+    setProfile = () => {
+        this.setState(()=> {
+            return {show:'profile'}
+        })
+        console.log(this.state.show);
+    }
+    setSetting = () => {
+        this.setState(()=> {
+            return {show:'setting'}
+        })
+        console.log(this.state.show);
+    }
+    setOrder = () => {
+        this.setState(()=> {
+            return {show:'order'}
+        })
+        console.log(this.state.show);
+    }
+    
     render() {
         let profilebox = (
             <div className ="text-center">
@@ -24,13 +42,13 @@ export default class ProfilePage extends Component {
                         </button>
                     </div>   
                 </Row>
-                <Row className ="p2 mt-2">
-                  <span className ="mx-auto my-2">Đơn hàng của tôi </span>
+                <Row className ="p2 mt-2"onClick = {()=> this.setOrder()}>
+                  <span className ="mx-auto my-2" >Đơn hàng của tôi </span>
                 </Row>
-                <Row className ="p2"> 
+                <Row className ="p2 my-3"onClick = {()=> this.setProfile()}>
                     <span className ="mx-auto my-2">Tài khoản của tôi </span>
                 </Row>
-                <Row className ="p2 mb-2"> 
+                <Row className ="p2 mb-2"onClick = {()=> this.setSetting()}> 
                     <span className ="mx-auto my-2">Cài đặt </span>
                 </Row>
             </div>
@@ -84,7 +102,7 @@ export default class ProfilePage extends Component {
         let orderdetail = (
             <div className = "ml-3 my-3">
                 <Row className ="ml-1">
-                    <h2>My Account</h2>
+                    <h2>Order</h2>
                 </Row>
                 <Row className ="ml-1">
                     chỉnh sửa thông tin cá nhân 
@@ -93,6 +111,28 @@ export default class ProfilePage extends Component {
             </div>
                 
         )
+        let setting = (
+            <div className = "ml-3 my-3">
+                <Row className ="ml-1">
+                    <h2>Setting</h2>
+                </Row>
+                <Row className ="ml-1">
+                    chỉnh sửa thông tin cá nhân 
+                </Row>
+                <hr/>
+            </div>
+                
+        )
+        let detail;
+        if (this.state.show === 'profile') {
+            detail = accountdetail
+        }
+        else if(this.state.show === 'order') {
+            detail = orderdetail
+        }
+        else if(this.state.show === 'setting'){
+            detail = setting
+        }
              
         return (
             <Container style ={{paddingTop:'2cm'}} className ="my-5">
@@ -101,7 +141,7 @@ export default class ProfilePage extends Component {
                         {profilebox}
                     </Col>
                     <Col lg ={8} className = "ml-3 accountdetail">
-                        {accountdetail}
+                        {detail}
                     </Col>
                 </Row>
             </Container>
