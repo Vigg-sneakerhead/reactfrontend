@@ -102,7 +102,7 @@ export default class ProfilePage extends Component {
         let orderdetail = (
             <div className = "ml-3 my-3">
                 <Row className ="ml-1">
-                    <h2>Order</h2>
+                    <h2>Đơn hàng</h2>
                 </Row>
                 <Row className ="ml-1">
                     chỉnh sửa thông tin cá nhân 
@@ -114,7 +114,7 @@ export default class ProfilePage extends Component {
         let setting = (
             <div className = "ml-3 my-3">
                 <Row className ="ml-1">
-                    <h2>Setting</h2>
+                    <h2>Cài đặt</h2>
                 </Row>
                 <Row className ="ml-1">
                     chỉnh sửa thông tin cá nhân 
