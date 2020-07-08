@@ -1,13 +1,13 @@
 .profilebox {
     background-color: white;
 }
-.p1 {
-    background-color: white;
+.pc {
+    background-color: rgb(179, 171, 171);
     color: black;
     border: solid;
     border-radius: 2px;
 }
-.p1 :hover {
+.pc :hover {
     font-weight: bolder;
     border-radius: 50%;
     cursor: pointer;
@@ -17,18 +17,23 @@
     color: black;
     border: solid;
 }
-.p2 :hover {
+.p2:hover {
     font-weight: bolder;
     border-radius: 50%;
     cursor: pointer;
 }
-.p3 {
+.accountdetail {
     background-color: white;
-    color: black;
-    border: solid;
 }
-.p3 :hover {
-    font-weight: bolder;
-    border-radius: 50%;
-    cursor: pointer;
+.noti {
+    opacity: 50%;
+}
+.email {
+    background-color: white;
+}
+.email:hover + .noti {
+    opacity:100%;
+}
+.diachibar {
+    padding-right: 85px;
 }

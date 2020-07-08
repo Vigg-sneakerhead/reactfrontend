@@ -82,7 +82,10 @@ const Routes = () => (
                 src="assets/images/profile/profilepagebackground.jpg"
                 style={{"position":"fixed", "zIndex":-1, objectFit:'cover', height: '100%', width: '100%'}}
             />
-            <ProfilePage/>
+            <ProfilePage 
+                email ="vigg-marketplace@gmail.com" 
+                phone ="8573995530"
+            />
         </Route>
         <Route>
             <NotFound/>
