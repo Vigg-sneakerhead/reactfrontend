@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import { Container, Row, Col, Form, FormLabel} from 'react-bootstrap'
 import './ProfilePage.css'
+import OrderHistory from './OrderHistory.js'
 
 export default class ProfilePage extends Component {
     state = {
-        show: 'profile',
+        show: 'order',
     }
     setProfile = () => {
         this.setState(()=> {
@@ -107,7 +108,11 @@ export default class ProfilePage extends Component {
                 <Row className ="ml-1">
                     chỉnh sửa thông tin cá nhân 
                 </Row>
+                
                 <hr/>
+                
+                <OrderHistory title ="yeezy 100" date ="July 12th 2020" receiver ="An Cao" price ="20.000.000"/>
+                
             </div>
                 
         )
